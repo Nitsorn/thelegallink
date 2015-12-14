@@ -1,3 +1,256 @@
-.black {
-  color: black
+$blue: #314A6F;
+$dark-blue: #1F2938;
+$gray: #939598;
+$light-gray: #DADEE4;
+$dark-gray: #292A2B;
+
+
+@font-face {
+    font-family: 'lane';
+    src: url('../files/fonts/lane/LANENAR_-webfont.eot');
+    src: url('../files/fonts/lane/LANENAR_-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../files/fonts/lane/LANENAR_-webfont.woff') format('woff'),
+         url('../files/fonts/lane/LANENAR_-webfont.ttf') format('truetype'),
+         url('../files/fonts/lane/LANENAR_-webfont.svg#lane_-_narrowregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
 }
+
+
+
+
+// HEADER
+body {
+	font-family: 'lane';
+	color: $light-gray;
+}
+
+#nav {
+	z-index: 10;
+	position: fixed;
+	top:0;
+	left:0;
+	width: 100vw;
+	background-color: $blue;
+	height: 100px;
+	box-shadow: 0px 5px 5px 1px rgba(black, 0.5);
+	padding-top: 25px;
+
+
+	#nav-logo-frame {
+		width: 70px;
+		height: 70px;
+		margin: auto;
+		overflow: hidden;
+
+		#nav-logo {
+			width: 70px;
+			height: 70px;
+			background-image: url('../files/images/logo.png');
+			background-size: 100%;
+			background-repeat: no-repeat;
+		}
+	}
+}
+
+#landing {
+	position: absolute;
+	left:0;
+	top:0;
+	width: 100vw;
+	height: 100vh;
+	background-image: url('../files/images/background.png');
+	background-size: 100%;
+	text-align: center;
+
+	h2 {
+		margin-top: 150px;
+		color: $light-gray;
+	}
+
+	#search-container {
+		margin: auto;
+		margin-top: 50px;
+		text-align: center;
+
+		& > * {
+			display: inline-block;
+			vertical-align: top;
+			margin: 20px;
+		}
+		#category-selector-container {
+			width: 230px;
+
+			#selector {
+				display: block;
+				float:right;
+				margin-top: 52.5px;
+				width: 45px;
+				height: 45px;
+				border-radius: 22.5px;
+				background-color: $blue;
+				box-shadow: 0px 2px 5px 0px rgba(black, 0.7);
+				transition:0.3s linear;
+				
+			}
+			
+			#all {
+				margin-top: 107.5px;
+			}
+
+			.category-container {
+				display: block;
+				height: 45px;
+				width: 220px;
+				text-align: right;
+				margin-top: 5px;
+				transition: 0.15s linear;
+
+
+				& > * {
+					display: inline-block;
+				}	
+
+				&:hover {
+					margin-top: 5.6px;
+
+					.category-circle {
+						height: 40px;
+						width: 40px;
+						border-radius: 20px;
+						padding: 10px;
+						margin-right: -8px;
+					}
+					span {
+						font-size: 15px;
+						transition: 0.15s linear;
+					}
+				}
+
+				.category-circle {
+					height: 30px;
+					width: 30px;
+					border-radius: 15px;
+					background-color: $gray;
+					padding: 5px;
+					transition: 0.15s linear;
+					margin-right: -3.5px;
+					box-shadow: 0px 1px 4px 0px rgba(black, 0.7);
+
+					
+
+					img {
+						max-width: 20px;
+						max-height: 20px;
+					}
+
+					
+				}
+				span {
+					color: $light-gray;
+					font-size: 12px;
+					padding: 3px;
+				}
+			}
+			
+		}
+
+
+		#search-find-container, #search-near-container {
+
+			h3 {
+				color: $light-gray;
+				margin-top: 0px;
+			}
+
+			input {
+				margin-top: 20px;
+				width: 300px;
+				height: 40px;
+				padding: 20px;
+				border: 0px;
+				outline: none;
+				background-color: $gray;
+				transition: 0.3s ease-in;
+				font-size: 15px;
+				box-shadow:0px 3px 4px 0px rgba(black, 0.5);
+			}
+
+			input:focus {
+				background-color: $light-gray;
+				box-shadow: inset 0px 3px 4px 0px rgba(black, 0.5);
+			}
+
+			::-webkit-input-placeholder {
+				color: $dark-gray;
+			}
+
+			:-moz-placeholder { /* Firefox 18- */
+				color: $dark-gray;
+			}
+
+			::-moz-placeholder {  /* Firefox 19+ */
+				color: $dark-gray;
+			}
+
+			:-ms-input-placeholder {  
+				color: $dark-gray;
+			}
+
+			#search-dropdown {
+				width: 300px;
+				height: 200px;
+				background-color: $dark-gray;
+				position:absolute;
+				box-shadow: inset 0px 3px 4px 0px rgba(black, 0.5);
+
+			}
+
+		}	
+
+		#go-container {
+			width: 200px;
+			#go-button {
+				float: left;
+				width: 45px;
+				height: 45px;
+				border-radius: 22.5px;
+				background-color: $blue;
+				box-shadow: 0px 2px 5px 0px rgba(black, 0.7);
+				margin-top: 52.5px;
+			}
+		}	
+	}
+}
+
+#test {
+	margin-top: 230px;
+	text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
