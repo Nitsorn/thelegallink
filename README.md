@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ReactStarter
 ====
 
@@ -26,3 +27,13 @@ Click [here](https://github.com/StephenGrider/ReactStarter/releases) then downlo
 	> npm install
 	> gulp
 ```
+=======
+# SimpleTax-Application
+# SimpleTax-Application
+# SimpleTax-Application
+# SimpleTax-Application
+# SimpleTax-Application
+# SimpleTax-Application
+# SimpleTax-Application
+# SimpleTax-Application
+>>>>>>> 3fa3d30036d868543df1fe17764198ff3cb64ae8
