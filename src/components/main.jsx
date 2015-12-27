@@ -1,5 +1,6 @@
 var React = require('react');
 var Header = require('./header');
+var Footer = require('./footer');
 
 module.exports = React.createClass({
 
@@ -10,6 +11,7 @@ module.exports = React.createClass({
 			<div id="container">
 				<Header />
 				{this.props.children}
+				<Footer />
 			</div>
 
 		)

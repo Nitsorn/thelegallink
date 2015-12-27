@@ -4,10 +4,10 @@ module.exports = React.createClass({
 
 
 	hide: function() {
-		console.log('categories.hide');
+		// console.log('categories.hide');
 		var that = this;
-		$(React.findDOMNode(this)).stop(true).slideUp({
-			duration: 1000,
+		$(React.findDOMNode(this)).stop(true).fadeOut({
+			duration: 300,
 			complete: function() {
 				that.props.onComplete()
 			}
@@ -15,12 +15,12 @@ module.exports = React.createClass({
 	},
 
 	componentDidMount: function() {
-		console.log('categories.componentdidmount');
-		$(React.findDOMNode(this)).stop(true).hide().slideDown(1000);
+		// console.log('categories.componentdidmount');
+		$(React.findDOMNode(this)).stop(true).hide().fadeIn(300);
 	},
 
 	componentWillUnmount: function() {
-		console.log('Hello.componentWillUnmount');
+		// console.log('Hello.componentWillUnmount');
 	},
 
 
@@ -35,7 +35,7 @@ module.exports = React.createClass({
 						onClick={this.update}
 						ref="test"
 						> 
-
+						<div className="category-cover" id={category['name']}/>
 						<span> {category['name']} </span>
 						<div className="category-circle" id={category['name']}>
 							<img id={category['name']} src={category['icon']}/>
@@ -53,9 +53,10 @@ module.exports = React.createClass({
 	},
 
 	update: function() {
-		newcat = event.target.getAttribute('id');
 
+		newcat = event.target.getAttribute('id');
 		this.props.selectCategory(newcat);
+		
 	},
 
 })
