@@ -10,8 +10,9 @@ module.exports = React.createClass({
 			)
 		}.bind(this))
 
+
 		var catName = selectedCat[0]['name'];
-		var catImage = selectedCat[0]['icon']
+		var catImage = selectedCat[0]['iconGray'];
 
 		return (
 

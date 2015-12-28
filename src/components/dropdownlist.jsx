@@ -15,25 +15,51 @@ module.exports = React.createClass({
 
 	changeActiveProf: function(event) {
 		var newactive = event.target.getAttribute('id');
-		this.props.changecat(newactive)
+		this.props.changecat(newactive);
+		event.stopPropagation();
 	},
 
 	changeActiveProfspan: function() {
-		newactive = $(event.target).text();
-		this.props.changecat(newactive)
+		var newactivespan = $(event.target).text() ?  $(event.target).text() : event.target.getAttribute('id');
+		this.props.changecat(newactivespan)
 	},
 
+	stopPropagation: function(e) {
+		e.stopPropagation();
+	},
+
+
+
+	// run stop propagation
+
+	
 
 	render: function() {
 
 		var allprops = this.props.categories.map(function(profession){
+
+			var className = 'left-wrapper ' + profession['nickname'];
+			var classNamenick = '.' + profession['nickname'];
+
+			if (profession['name'] == this.props.selected) {
+				$(classNamenick).css({'background-color': '#939598','color':'#DADEE4'});
+				var image = <img onClick={this.changeActiveProf} src={profession['iconGray']} id={profession['name']} /> 
+			} else {
+				$(classNamenick).css('background-color', '#DADEE4','color','#939598')
+				var image = <img onClick={this.changeActiveProf} src={profession['icon']} id={profession['name']} /> 
+
+			}
+
 			return (
 
-				<div className="left-wrapper" id={profession['name']}> 
-					<img onClick={this.changeActiveProf} src={profession['icon']} id={profession['name']} /> 
-					<p id={profession['name']} onClick={this.changeActiveProfspan}> {profession['name']} </p>
+				<div onClick={this.changeActiveProf} className={className} id={profession['name']}> 
+					{image}
+					<p id={profession['name']} onClick={this.changeActiveProf} > 
+						<span onClick={this.changeActiveProfspan}> 
+							{profession['name']} 
+						</span> 
+					</p>
 				</div>
-
 			)
 		}.bind(this));
 
@@ -41,7 +67,6 @@ module.exports = React.createClass({
 		var selectedprop = this.props.categories.filter(function(selectedprop) {
 			return (selectedprop['name'] == this.props.selected)
 		}.bind(this));
-
 
 		var selecteddrop = selectedprop[0]['breakdowns'].map(function(selecteddrop) {
 
@@ -59,7 +84,7 @@ module.exports = React.createClass({
 				<div id='left-side'>
 					{allprops}
 				</div>
-				<div id='right-side' onClick={this.props.animate}> 
+				<div id='right-side'> 
 					{selecteddrop} 
 				</div>
 

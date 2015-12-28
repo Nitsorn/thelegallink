@@ -4,8 +4,8 @@ var Footer = require('./footer');
 
 module.exports = React.createClass({
 
-	render: function() {
 
+	render: function() {
 		return (
 
 			<div id="container">

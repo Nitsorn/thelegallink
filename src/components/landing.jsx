@@ -3,10 +3,35 @@ var Categories = require('./categories');
 var SearchBox = require('./searchbox');
 var SearchBoxNear = require('./searchboxnear');
 
+var SideBar = require('./sidebar');
 
 module.exports = React.createClass({
 
-	
+	getInitialState: function() {
+		return ({
+			sideBarOpen: true,
+			marginRight: 0,
+		})
+	},
+
+	toggleOpenSideBar: function() {
+		if (this.state.sideBarOpen) {
+			this.setState({sideBarOpen: false, marginRight: -315})
+			$('#arrow-side').css('transform','rotate(-90deg');
+
+		} else {
+			this.setState({sideBarOpen: true, marginRight: 0})
+			$('#arrow-side').css('transform','rotate(90deg');
+		}
+	},
+
+	toggleOpenSideBarClose: function() {
+		if (this.state.sideBarOpen) {
+			this.setState({sideBarOpen: false, marginRight: -315})
+			$('#arrow-side').css('transform','rotate(-90deg');
+
+		}
+	},
 
 	componentDidUpdate: function() {
 	  var node = this.getDOMNode();
@@ -15,9 +40,15 @@ module.exports = React.createClass({
 
 	render: function() {
 
-		
+		var marginRight = {right: this.state.marginRight + 'px'}
+		console.log(marginRight)
+
 		return (	
-			<div id="landing" onClick={this.onClickOpen}> 
+			<div id="landing" onClick={this.toggleOpenSideBarClose}> 
+
+				<SideBar 
+					marginRight={marginRight} 
+					toggleOpenSideBar={this.toggleOpenSideBar}/>
 				<div id="logo"/>	
 				<h3> Find Service Professionals around your area and Vancouver</h3>
 
@@ -28,11 +59,8 @@ module.exports = React.createClass({
 					</div>	
 					<div id="search-near-container">
 						<h5> Near: </h5> 
-						<SearchBoxNear />
+						<SearchBoxNear toggleOpenSideBar={this.toggleOpenSideBar}/>
 					</div>
-					<div id="go-container"> 
-						<div id="go-button"/>
-					</div>	
 				</div>
 
 				<a href = '#footer' onClick={this.componentDidUpdate}>

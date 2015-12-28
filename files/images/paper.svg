@@ -1,16 +1,16 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 width="500px" height="500px" viewBox="0 0 500 500" enable-background="new 0 0 500 500" xml:space="preserve">
-<path fill="#324B5B" d="M406.122,7.376H117.203c-17.853,0-32.326,14.473-32.326,32.326v422.873
-	c0,17.853,14.473,32.325,32.326,32.325h288.919c17.853,0,32.326-14.473,32.326-32.325V39.703
-	C438.448,21.85,423.975,7.376,406.122,7.376z M382.242,438.758l-244.196,0.504L136.459,74.5l247.375-0.667L382.242,438.758z"/>
-<rect x="157.637" y="112.5" fill="#324B5B" width="205.51" height="16.892"/>
-<rect x="157.637" y="158.769" fill="#324B5B" width="205.51" height="16.891"/>
-<rect x="157.637" y="198.251" fill="#324B5B" width="205.51" height="16.893"/>
-<rect x="157.637" y="247.275" fill="#324B5B" width="205.51" height="16.892"/>
-<rect x="157.637" y="288.4" fill="#324B5B" width="105.69" height="16.891"/>
-<rect x="162.057" y="369.813" fill="#324B5B" width="71.743" height="15.026"/>
-<rect x="296.799" y="369.813" fill="#324B5B" width="71.743" height="15.026"/>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="468px" height="468px" viewBox="0 0 468 468" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.4.4 (17249) - http://www.bohemiancoding.com/sketch -->
+    <title>Artboard 1</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Artboard-1" sketch:type="MSArtboardGroup" fill="#314A6F">
+            <g id="paper-+-Path-1" sketch:type="MSLayerGroup" transform="translate(54.000000, 2.000000)">
+                <g id="paper" sketch:type="MSShapeGroup">
+                    <path d="M0,42.0073066 C0,18.8073118 18.8010817,0 42.0011348,0 L317.998865,0 C341.195451,0 360,18.8064538 360,42.0006288 L360,337.093531 L360,420.991545 C360,444.192174 341.196598,463 318.007389,463 L220.203924,463 L41.9937977,463 C18.8012636,463 0,444.204161 0,420.992693 L0,42.0073066 Z M49.0191215,74.2873134 L301.738254,74.2873134 L301.738254,110 L49.0191215,110 L49.0191215,74.2873134 Z M49,134 L301.719132,134 L301.719132,169.712687 L49,169.712687 L49,134 Z M49,193.789993 L301.719132,193.789993 L301.719132,229.50268 L49,229.50268 L49,193.789993 Z M49,253.50268 L231,253.50268 L231,289.215366 L49,289.215366 L49,253.50268 Z M49,371 L231,371 L231,406.712687 L49,406.712687 L49,371 Z" id="Rectangle-8"></path>
+                </g>
+            </g>
+        </g>
+    </g>
 </svg>

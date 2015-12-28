@@ -16,7 +16,8 @@ module.exports = React.createClass({
 					name: 'All Professions',
 					nickname: 'all',
 					id: 0,
-					icon: "./files/images/hammer.svg",
+					icon: "./files/images/total.png",
+					iconGray: "./files/images/total-gray.png",
 					breakdowns: [
 						{
 							name: 'Civil Lawyers',
@@ -58,6 +59,7 @@ module.exports = React.createClass({
 					nickname: 'law',
 					id: 1,
 					icon: "./files/images/hammer.svg",
+					iconGray: "./files/images/hammer-gray.png",
 					breakdowns: [
 						{
 							name: 'Civil Lawyers',
@@ -74,6 +76,7 @@ module.exports = React.createClass({
 					nickname: 'doc',
 					id: 2,
 					icon: "./files/images/pill.svg",
+					iconGray: "./files/images/pill-gray.png",
 					breakdowns: [
 						{
 							name: 'General Practitioners',
@@ -90,6 +93,7 @@ module.exports = React.createClass({
 					nickname: 'health',
 					id: 3,
 					icon: "./files/images/heart.svg",
+					iconGray: "./files/images/heart-gray.png",
 					breakdowns: [
 						{
 							name: 'Active Rehabilitatators',
@@ -103,6 +107,7 @@ module.exports = React.createClass({
 					nickname: 'car',
 					id: 4,
 					icon: "./files/images/wheel.svg",
+					iconGray: "./files/images/wheel-gray.png",
 					breakdowns: [
 						{
 							name: 'Car Dealers',
@@ -116,6 +121,7 @@ module.exports = React.createClass({
 					nickname: 'legal',
 					id: 5,
 					icon: "./files/images/paper.svg",
+					iconGray: "./files/images/paper-gray.png",
 					breakdowns: [
 						{
 							name: 'Notary Publics',
@@ -129,6 +135,7 @@ module.exports = React.createClass({
 					nickname: 'prof',
 					id: 6,
 					icon: "./files/images/bag.svg",
+					iconGray: "./files/images/bag-gray.png",
 					breakdowns: [
 						{
 							name: 'Accountants',
@@ -141,42 +148,61 @@ module.exports = React.createClass({
 		})
 	},
 
-
-
 	changestuff: function() {
 		var input = this.refs.searchInput;
 		var include = input.getDOMNode().value;
 		this.setState({
 			include: include
 		})
-
-
 	},
 
 	updateinput: function(whatwasclicked) {
 		document.getElementById('search-find').value = whatwasclicked;
+		this.animate();
 	},
 
+
+
 	getInitialState: function() {
+
+		// if ($(document).width() > 800) {
+		// 	dropdownshown = true;
+		// 	marginTop = 25;
+		// 	arrowDown = true;
+		// 	height = 310;
+
+		// } else {
+		// 	dropdownshown = false;
+		// 	marginTop = -260;
+		// 	arrowDown = false;
+		// 	height = 60;
+		// }
+
+		dropdownshown = false;
+		marginTop = -260;
+		arrowDown = false;
+		height = 60;
+
+
 		return ({
-			category: false,
 			selected: 'All Professions',
 			include: '',
-			dropdownshown: false,
-			marginTop: -260,
-			arrowDown: false,
+			dropdownshown: dropdownshown,
+			marginTop: marginTop,
+			arrowDown: arrowDown,
+			height: height,
 		})
 	},
 	
 	animate: function() {
 
 		if (this.state.dropdownshown) {
-			this.setState({dropdownshown: false, marginTop: -260, arrowDown: false});
+			this.setState({dropdownshown: false, marginTop: -260, arrowDown: false, height: 60});
 			$('#arrow-gray').css('transform','rotate(0deg');
 
 
 		} else {
-			this.setState({dropdownshown: true, marginTop: 25, arrowDown: true})
+			this.setState({dropdownshown: true, marginTop: 25, arrowDown: true, height: 310})
 			$('#arrow-gray').css('transform','rotate(180deg');
 		}
 	},
@@ -184,13 +210,13 @@ module.exports = React.createClass({
 	animateOpen: function() {
 
 		if (!this.state.dropdownshown) {
-			this.setState({dropdownshown: true, marginTop: 25, arrowDown: true})
+			this.setState({dropdownshown: true, marginTop: 25, arrowDown: true, height: 310})
 			$('#arrow-gray').css('transform','rotate(180deg');
 		}
 	},
 
 	changecat: function(newcat) {
-		this.setState({selected:newcat});
+		newcat ? this.setState({selected:newcat}): '';
 		document.getElementById('search-find').value = '';
 	},
 
@@ -198,18 +224,18 @@ module.exports = React.createClass({
 
 
 		var selected = this.state.selected;		
-
-
+		var height = {height: this.state.height + 'px'};
 		var marginTop = {top: this.state.marginTop + 'px'};
 
 
 		return (
 
-		<div className='dropdown-container'>
+		<div className='dropdown-container' style={height}> 
 
 			<div id='dropdown-input-container'>
 				
  				<CatImage 
+ 					dropdownshown={this.state.dropdownshown}
  					selected={this.state.selected}
  					categories={this.props.categories} 
  					animate={this.animate}/>
@@ -230,6 +256,7 @@ module.exports = React.createClass({
 			<div id='search-dropdown' style={marginTop} >
 
 				<DropdownList 
+					stopPropagation={this.stopPropagation}
 					changecat={this.changecat}
 					animate={this.animate}
 					updateinput={this.updateinput}
