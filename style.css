@@ -1,0 +1,488 @@
+@font-face {
+  font-family: 'lane';
+  src: url("../files/fonts/lane/LANENAR_-webfont.eot");
+  src: url("../files/fonts/lane/LANENAR_-webfont.eot?#iefix") format("embedded-opentype"), url("../files/fonts/lane/LANENAR_-webfont.woff") format("woff"), url("../files/fonts/lane/LANENAR_-webfont.ttf") format("truetype"), url("../files/fonts/lane/LANENAR_-webfont.svg#lane_-_narrowregular") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+body {
+  font-family: 'lane';
+  color: #DADEE4; }
+
+#nav {
+  z-index: 10;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 60px;
+  padding-top: 20px; }
+  #nav #nav-logo-frame {
+    width: 50px;
+    height: 50px;
+    float: left;
+    margin: 0 20px; }
+    #nav #nav-logo-frame #nav-logo {
+      width: 35px;
+      height: 35px;
+      background-image: url("../files/images/logo.png");
+      background-size: 100%;
+      background-repeat: no-repeat; }
+
+#footer {
+  width: 100%;
+  height: 150px;
+  background-color: #314A6F;
+  position: absolute;
+  bottom: -150px;
+  left: 0;
+  box-shadow: 0px -3px 5px 1px rgba(0, 0, 0, 0.5); }
+  #footer #top-ten-container {
+    float: left;
+    width: 50%;
+    margin: 15px; }
+    #footer #top-ten-container #top-ten {
+      position: relative;
+      border-radius: 5px;
+      background-color: #313233;
+      width: 50%;
+      height: 80px;
+      overflow: hidden;
+      margin: auto;
+      margin-top: 20px;
+      box-shadow: inset 0px -2px 4px 0px rgba(0, 0, 0, 0.5); }
+      #footer #top-ten-container #top-ten h3, #footer #top-ten-container #top-ten h5 {
+        margin-bottom: 15px;
+        margin-top: 10px;
+        text-align: center; }
+      #footer #top-ten-container #top-ten h5 {
+        font-size: 15px; }
+      #footer #top-ten-container #top-ten #go {
+        position: absolute;
+        width: 100%;
+        height: 120px;
+        text-align: center;
+        padding: 30px;
+        background-color: #007339;
+        transition: 0.2s ease-in; }
+      #footer #top-ten-container #top-ten:hover {
+        box-shadow: inset 0px -2px 4px 0px rgba(0, 0, 0, 0.5); }
+        #footer #top-ten-container #top-ten:hover #go {
+          margin-top: -90px;
+          box-shadow: inset 0px -2px 4px 0px rgba(0, 0, 0, 0.5); }
+
+#landing {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: url("../files/images/background_new.png");
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  text-align: center; }
+  @media screen and (max-aspect-ratio: 1188 / 778) {
+    #landing {
+      background-size: auto 100%; } }
+  #landing #logo {
+    background-image: url("../files/images/logo-gray.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    height: 150px;
+    width: 150px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 14vh;
+    left: 0;
+    right: 0; }
+    @media screen and (max-width: 800px) {
+      #landing #logo {
+        height: 100px;
+        width: 100px;
+        margin-bottom: 10px; } }
+    @media screen and (max-width: 600px) {
+      #landing #logo {
+        height: 80px;
+        width: 80px;
+        margin-bottom: 20px; } }
+  #landing h3 {
+    color: #DADEE4;
+    font-size: 17px;
+    margin-top: 0px;
+    letter-spacing: 1px; }
+  #landing #search-container {
+    margin-top: 10px;
+    margin-left: 20px;
+    text-align: center;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0; }
+    #landing #search-container > * {
+      display: inline-block;
+      vertical-align: top; }
+    #landing #search-container #search-find-container h5, #landing #search-container #search-near-container h5 {
+      color: #DADEE4; }
+    #landing #search-container #search-find-container .dropdown-container, #landing #search-container #search-near-container .dropdown-container {
+      transition: 0.5s ease;
+      height: 60px;
+      width: 330px;
+      overflow: hidden;
+      margin-left: 10px;
+      position: relative;
+      border-radius: 3px; }
+      #landing #search-container #search-find-container .dropdown-container input, #landing #search-container #search-near-container .dropdown-container input {
+        z-index: 10000;
+        position: relative;
+        margin-top: 0px;
+        width: 280px;
+        height: 40px;
+        padding: 20px;
+        border: 0px;
+        border-radius: 0 3px 0 3px;
+        outline: none;
+        background-color: white;
+        color: black;
+        transition: 0.5s ease-in;
+        font-size: 15px;
+        box-shadow: 0px 3px 4px 0px rgba(0, 0, 0, 0.5);
+        letter-spacing: 1px; }
+      #landing #search-container #search-find-container .dropdown-container ::-webkit-input-placeholder, #landing #search-container #search-near-container .dropdown-container ::-webkit-input-placeholder {
+        color: #313233; }
+      #landing #search-container #search-find-container .dropdown-container :-moz-placeholder, #landing #search-container #search-near-container .dropdown-container :-moz-placeholder {
+        /* Firefox 18- */
+        color: #313233; }
+      #landing #search-container #search-find-container .dropdown-container ::-moz-placeholder, #landing #search-container #search-near-container .dropdown-container ::-moz-placeholder {
+        /* Firefox 19+ */
+        color: #313233; }
+      #landing #search-container #search-find-container .dropdown-container :-ms-input-placeholder, #landing #search-container #search-near-container .dropdown-container :-ms-input-placeholder {
+        color: #313233; }
+      #landing #search-container #search-find-container .dropdown-container #search-dropdown, #landing #search-container #search-near-container .dropdown-container #search-dropdown {
+        z-index: 10;
+        transition: 0.45s ease;
+        width: 330px;
+        border-radius: 3px;
+        position: absolute;
+        height: 253px;
+        background-color: #313233;
+        box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5); }
+        #landing #search-container #search-find-container .dropdown-container #search-dropdown #left-side, #landing #search-container #search-near-container .dropdown-container #search-dropdown #left-side {
+          display: inline-block;
+          padding-top: 15px;
+          vertical-align: top;
+          float: left;
+          height: 253px;
+          width: 50px;
+          font-size: 12px;
+          background-color: #DADEE4;
+          border-radius: 0 0 0 3px;
+          transition: 0.5s ease;
+          overflow: hidden;
+          z-index: -11; }
+          #landing #search-container #search-find-container .dropdown-container #search-dropdown #left-side:hover, #landing #search-container #search-near-container .dropdown-container #search-dropdown #left-side:hover {
+            width: 180px;
+            box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5); }
+          #landing #search-container #search-find-container .dropdown-container #search-dropdown #left-side .left-wrapper, #landing #search-container #search-near-container .dropdown-container #search-dropdown #left-side .left-wrapper {
+            width: 180px;
+            float: left;
+            text-align: left;
+            transition: 0.3s ease;
+            height: 34px; }
+            #landing #search-container #search-find-container .dropdown-container #search-dropdown #left-side .left-wrapper:hover, #landing #search-container #search-near-container .dropdown-container #search-dropdown #left-side .left-wrapper:hover {
+              padding-left: 10px; }
+            #landing #search-container #search-find-container .dropdown-container #search-dropdown #left-side .left-wrapper img, #landing #search-container #search-near-container .dropdown-container #search-dropdown #left-side .left-wrapper img {
+              vertical-align: middle;
+              display: inline-block;
+              max-width: 30px;
+              margin: 0px 5px 5px 10px;
+              max-height: 30px;
+              padding: 8px 6px 5px 7.5px; }
+            #landing #search-container #search-find-container .dropdown-container #search-dropdown #left-side .left-wrapper .legal, #landing #search-container #search-near-container .dropdown-container #search-dropdown #left-side .left-wrapper .legal {
+              margin-left: 30px !important; }
+            #landing #search-container #search-find-container .dropdown-container #search-dropdown #left-side .left-wrapper p, #landing #search-container #search-near-container .dropdown-container #search-dropdown #left-side .left-wrapper p {
+              cursor: default;
+              vertical-align: middle;
+              display: inline-block;
+              color: #314A6F;
+              margin-top: 5px;
+              padding-left: 5px;
+              width: 120px; }
+          #landing #search-container #search-find-container .dropdown-container #search-dropdown #left-side .all, #landing #search-container #search-near-container .dropdown-container #search-dropdown #left-side .all {
+            background-color: #939598;
+            color: #DADEE4; }
+        #landing #search-container #search-find-container .dropdown-container #search-dropdown #right-side, #landing #search-container #search-near-container .dropdown-container #search-dropdown #right-side {
+          position: absolute;
+          margin-left: -140px;
+          z-index: -10;
+          display: inline-block;
+          padding-top: 25px;
+          padding-left: 40px;
+          vertical-align: top;
+          background-color: #313233;
+          float: left;
+          text-align: left;
+          width: 280px;
+          height: 253px;
+          overflow-y: scroll;
+          overflow-x: hidden;
+          border-radius: 0 0 3px 0; }
+          #landing #search-container #search-find-container .dropdown-container #search-dropdown #right-side p, #landing #search-container #search-near-container .dropdown-container #search-dropdown #right-side p {
+            cursor: default;
+            transition: 0.3s ease;
+            width: 170px;
+            margin: auto;
+            margin-top: 5px;
+            font-size: 17px; }
+            #landing #search-container #search-find-container .dropdown-container #search-dropdown #right-side p:hover, #landing #search-container #search-near-container .dropdown-container #search-dropdown #right-side p:hover {
+              padding-left: 10px; }
+      #landing #search-container #search-find-container .dropdown-container #go-container, #landing #search-container #search-near-container .dropdown-container #go-container {
+        width: 50px;
+        height: 40.19px;
+        border-radius: 0 3px 3px 0;
+        background-color: #314A6F;
+        display: inline-block;
+        vertical-align: top;
+        z-index: 100000;
+        position: relative;
+        box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.5); }
+        #landing #search-container #search-find-container .dropdown-container #go-container img, #landing #search-container #search-near-container .dropdown-container #go-container img {
+          max-width: 20px;
+          max-height: 20px;
+          margin: 10 15; }
+    #landing #search-container #search-near-container {
+      margin-right: 10px; }
+      #landing #search-container #search-near-container #search-near {
+        border-radius: 3px 0 0 3px; }
+    #landing #search-container #search-find-container {
+      width: 330px;
+      margin-right: 20px; }
+      #landing #search-container #search-find-container #dropdown-input-container {
+        background-color: white;
+        width: 330px;
+        z-index: 1000;
+        height: 40px;
+        border-radius: 3px 3px 3px 3px;
+        outline: none;
+        background-color: #DADEE4;
+        box-shadow: 0px 3px 4px 0px rgba(0, 0, 0, 0.5); }
+        #landing #search-container #search-find-container #dropdown-input-container #cat-image {
+          width: 50px;
+          height: 40.19px;
+          border-radius: 3px 0 0 3px;
+          position: relative;
+          background-color: #314A6F;
+          display: inline-block;
+          vertical-align: top;
+          float: left;
+          z-index: 100000;
+          box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.5); }
+          #landing #search-container #search-find-container #dropdown-input-container #cat-image > * {
+            display: inline-block;
+            vertical-align: middle; }
+          #landing #search-container #search-find-container #dropdown-input-container #cat-image img {
+            height: 20px;
+            width: auto;
+            margin-top: 10px; }
+          #landing #search-container #search-find-container #dropdown-input-container #cat-image span {
+            width: 100px;
+            padding-left: 5px;
+            color: black; }
+        #landing #search-container #search-find-container #dropdown-input-container #search-find {
+          width: 240px;
+          display: inline-block;
+          vertical-align: top;
+          border-radius: 0;
+          box-shadow: none;
+          box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.5); }
+        #landing #search-container #search-find-container #dropdown-input-container .dropdown-arrow {
+          display: inline-block;
+          vertical-align: top;
+          z-index: 10000;
+          position: relative;
+          margin-top: 0px;
+          width: 40px;
+          height: 40px;
+          border: 0px;
+          border-radius: 0 3px 3px 0;
+          outline: none;
+          background-color: white;
+          color: black;
+          transition: 0.5s ease-in;
+          font-size: 15px;
+          background-size: 100%; }
+          #landing #search-container #search-find-container #dropdown-input-container .dropdown-arrow #arrow-gray {
+            background-image: url("../files/images/dropdown-gray.png");
+            width: 15px;
+            height: 10px;
+            margin: 15px 12px;
+            background-size: 100%;
+            background-repeat: no-repeat;
+            transition: 0.3s ease; }
+  #landing #scroll-down {
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    width: 20px;
+    height: 50px;
+    background-image: url("../files/images/scroll-down.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    bottom: 0px;
+    transition: 0.3s ease; }
+    #landing #scroll-down:hover {
+      bottom: -5px; }
+
+#test {
+  margin-top: 230px;
+  text-align: center; }
+
+#sidebar-container {
+  position: fixed;
+  z-index: 1000000;
+  width: 350px;
+  height: 100vh;
+  transition: 0.4s ease-out;
+  top: 0;
+  box-shadow: -2px 0px 3px 0px rgba(0, 0, 0, 0.7); }
+  #sidebar-container #toggle-tab {
+    width: 35px;
+    background-color: #1F2938;
+    height: 100vh;
+    float: left;
+    box-shadow: 1px 0px 2px 0px rgba(0, 0, 0, 0.7);
+    transition: 0.5s ease; }
+    #sidebar-container #toggle-tab:hover {
+      background-color: #313233; }
+    #sidebar-container #toggle-tab #arrow-side {
+      background-image: url("../files/images/dropdown-gray.png");
+      width: 15px;
+      height: 10px;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      position: absolute;
+      margin-top: auto;
+      margin-bottom: auto;
+      top: 0;
+      bottom: 0;
+      transform: rotate(-90deg);
+      margin-left: 9px;
+      transition: 0.6s ease; }
+  #sidebar-container #sidebar-content {
+    float: right;
+    width: 315px;
+    margin: auto;
+    background-color: #314A6F;
+    height: 101vh;
+    background-image: url("../files/images/background-sidebar-gray.png");
+    background-size: auto 100%;
+    background-repeat: no-repeat; }
+    #sidebar-container #sidebar-content #sidebar-content-container {
+      overflow: scroll;
+      width: 85%;
+      height: 100vh;
+      margin: auto;
+      letter-spacing: 2px; }
+      #sidebar-container #sidebar-content #sidebar-content-container h3 {
+        margin-top: 30px;
+        font-size: 20px;
+        margin-bottom: 20px; }
+        #sidebar-container #sidebar-content #sidebar-content-container h3 #we {
+          font-size: 39px; }
+        #sidebar-container #sidebar-content #sidebar-content-container h3 #number {
+          margin-left: 10px;
+          margin-right: 10px;
+          font-size: 70px;
+          background: -webkit-linear-gradient(bottom, #5e7fa4, #c7dbf1, #5e7fa4);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent; }
+        #sidebar-container #sidebar-content #sidebar-content-container h3 #days {
+          font-size: 20px; }
+      #sidebar-container #sidebar-content #sidebar-content-container h5, #sidebar-container #sidebar-content #sidebar-content-container h4 {
+        line-height: 20px;
+        margin-bottom: 20px; }
+      #sidebar-container #sidebar-content #sidebar-content-container h5 {
+        font-size: 12px;
+        color: #DADEE4; }
+      #sidebar-container #sidebar-content #sidebar-content-container h4 {
+        border-top: 2px solid #1F2938;
+        padding-top: 20px;
+        font-size: 12px; }
+      #sidebar-container #sidebar-content #sidebar-content-container #free {
+        margin-bottom: 40px;
+        line-height: 25px; }
+        #sidebar-container #sidebar-content #sidebar-content-container #free div {
+          font-size: 15px;
+          color: #DADEE4; }
+          #sidebar-container #sidebar-content #sidebar-content-container #free div #number {
+            border-bottom: 2px solid #DADEE4;
+            padding-bottom: 2px;
+            margin-left: 3px;
+            margin-right: 3px;
+            transition: 0.3s ease;
+            position: relative;
+            padding: 2px; }
+            #sidebar-container #sidebar-content #sidebar-content-container #free div #number #old {
+              text-decoration: line-through;
+              font-size: 13px; }
+            #sidebar-container #sidebar-content #sidebar-content-container #free div #number:after {
+              z-index: 0;
+              transition: 0.2s ease;
+              visibility: hidden;
+              top: 100%;
+              left: 50%;
+              border: solid transparent;
+              content: " ";
+              height: 0;
+              width: 0;
+              position: absolute;
+              pointer-events: none;
+              border-color: rgba(31, 41, 56, 0);
+              border-top-color: #1F2938;
+              border-width: 0px;
+              margin-left: -10px; }
+            #sidebar-container #sidebar-content #sidebar-content-container #free div #number:hover {
+              border-bottom: 2px solid #1F2938;
+              color: #DADEE4;
+              background-color: #1F2938;
+              padding: 2px;
+              border-radius: 2px; }
+              #sidebar-container #sidebar-content #sidebar-content-container #free div #number:hover:after {
+                top: 100%;
+                visibility: visible;
+                left: 50%;
+                border: solid transparent;
+                content: " ";
+                height: 0;
+                width: 0;
+                position: absolute;
+                pointer-events: none;
+                border-color: rgba(31, 41, 56, 0);
+                border-top-color: #1F2938;
+                border-width: 10px;
+                margin-left: -10px; }
+        #sidebar-container #sidebar-content #sidebar-content-container #free p {
+          font-size: 12px;
+          float: right;
+          margin-right: 4px; }
+      #sidebar-container #sidebar-content #sidebar-content-container #sign-up-container {
+        width: 50%;
+        height: 40px;
+        background-color: #1F2938;
+        color: #DADEE4;
+        margin: auto;
+        border-radius: 3px;
+        transition: 0.4s ease;
+        margin-bottom: 100px; }
+        #sidebar-container #sidebar-content #sidebar-content-container #sign-up-container:hover {
+          background-color: #939598;
+          color: #1F2938; }
+        #sidebar-container #sidebar-content #sidebar-content-container #sign-up-container #button {
+          width: 100%;
+          padding-top: 10px;
+          height: 40px; }
+          #sidebar-container #sidebar-content #sidebar-content-container #sign-up-container #button span {
+            font-size: 15px;
+            cursor: default; }
