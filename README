@@ -1,0 +1,24 @@
+firebase url
+https://legal-link.firebaseIO.com/listings
+
+{
+	"profession" : "civil_lawyer",
+	"name" : "Nicki Minaj",
+	"photo_url" : "http://www.glamour.com/images/entertainment/2015/03/nicki-minaj-w724.jpg",
+	"website_url" : "www.bobsmith.com",
+	"phone" : "604-123-1234",
+	"email" : "bob@smith.com",
+	"lat_lng" : {"lat" : 49.23741959999999, "lng" : -123.17215490000001 }
+
+}
+
+{
+	"profession" : "accountant",
+	"name" : "Monica Geller",
+	"photo_url" : "http://www.classictvbeauties.com/corteney_cox_6_resized.jpg",
+	"website_url" : "www.bobsmith.com",
+	"phone" : "604-123-1234",
+	"email" : "bob@smith.com",
+	"lat_lng" : {"lat" : 49.26640039999999, "lng" : -123.08457299999998 }
+	
+}

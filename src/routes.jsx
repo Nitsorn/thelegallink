@@ -7,7 +7,7 @@ var Router = ReactRouter.Router;
 var Route = ReactRouter.Route;
 var Main = require('./components/main');
 var Landing = require('./components/landing');
-var CivilLawyer = require('./components/lawyers/civil')
+var SearchResults = require('./components/search/search-results')
 
 module.exports = (
 
@@ -15,7 +15,7 @@ module.exports = (
 		<Redirect from="/" to="landing" />
 		<Route path="/" component={Main}>
 			<Route path="landing" component={Landing} />
-			<Route path="lawyer-civil" component={CivilLawyer} />
+			<Route path="search-results" component={SearchResults} />
 		</Route>
 	</Router>
 
