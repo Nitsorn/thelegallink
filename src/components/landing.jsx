@@ -11,6 +11,7 @@ module.exports = React.createClass({
 		return ({
 			sideBarOpen: true,
 			marginRight: 0,
+			dropdownshown: true
 		})
 	},
 
@@ -26,11 +27,12 @@ module.exports = React.createClass({
 	},
 
 	toggleOpenSideBarClose: function() {
+		this.setState({dropdownshown: false});
 		if (this.state.sideBarOpen) {
 			this.setState({sideBarOpen: false, marginRight: -315})
 			$('#arrow-side').css('transform','rotate(-90deg');
-
 		}
+
 	},
 
 	componentDidUpdate: function() {
@@ -41,7 +43,6 @@ module.exports = React.createClass({
 	render: function() {
 
 		var marginRight = {right: this.state.marginRight + 'px'}
-		console.log(marginRight)
 
 		return (	
 			<div id="landing" onClick={this.toggleOpenSideBarClose}> 
@@ -55,7 +56,7 @@ module.exports = React.createClass({
 				<div id="search-container">
 					<div id="search-find-container">
 						<h5> Find: </h5> 
-						<SearchBox />
+						<SearchBox dropdownshown={this.state.dropdowndownshown}/>
 					</div>	
 					<div id="search-near-container">
 						<h5> Near: </h5> 
@@ -63,7 +64,7 @@ module.exports = React.createClass({
 					</div>
 				</div>
 
-				<a href = '#footer' onClick={this.componentDidUpdate}>
+				<a href='#footer' onClick={this.componentDidUpdate}>
 					<div  id='scroll-down' />
 				</a>
 			</div>

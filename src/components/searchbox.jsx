@@ -162,10 +162,9 @@ module.exports = React.createClass({
 	},
 
 
-
 	getInitialState: function() {
 
-		// if ($(document).width() > 800) {
+		// if (this.props.dropdownshown) {
 		// 	dropdownshown = true;
 		// 	marginTop = 25;
 		// 	arrowDown = true;
@@ -182,6 +181,15 @@ module.exports = React.createClass({
 		marginTop = -260;
 		arrowDown = false;
 		height = 60;
+
+
+
+		// dropdownshown = false;
+		// marginTop = -260;
+		// arrowDown = false;
+		// height = 60;		
+
+
 
 
 		return ({
@@ -231,7 +239,6 @@ module.exports = React.createClass({
 		return (
 
 		<div className='dropdown-container' style={height}> 
-
 			<div id='dropdown-input-container'>
 				
  				<CatImage 

@@ -170,7 +170,7 @@ body {
 	// 	margin:auto;
 	// }
 
-	#search-container {
+	#search-container, #sign-up-container {
 		margin-top: 10px;
 		margin-left: 20px;
 		text-align: center;
@@ -187,6 +187,13 @@ body {
 
 		#search-find-container, #search-near-container {
 
+			#dropdown-layer-close {
+				position: absolute;
+				width: 100%;
+				height: 100vh;
+				z-index: 100000;
+			}
+
 			h5 {
 				color: $light-gray;
 			}
@@ -199,6 +206,8 @@ body {
 				margin-left: 10px;
 				position: relative;
 				border-radius: 3px;
+
+
 
 				input {
 					z-index: 10000;
@@ -539,8 +548,9 @@ body {
 			margin-bottom: auto;
 			top: 0;
 			bottom: 0;
-			transform: rotate(-90deg);
+			transform: rotate(90deg);
 			margin-left: 9px;
+			transition-delay: 3s ease;
 			transition: 0.6s ease;
 		}
 	}
@@ -551,6 +561,7 @@ body {
 		margin: auto;
 		background-color: $blue;
 		height: 101vh;
+		overflow: scroll;
 		background-image: url('../files/images/background-sidebar-gray.png');
 		background-size: auto 100%;
 		background-repeat: no-repeat;
@@ -560,6 +571,7 @@ body {
 			width: 85%;
 			height: 100vh;
 			margin: auto;
+			position:relative;
 
 			letter-spacing: 2px;
 
@@ -689,13 +701,15 @@ body {
 
 
 			#sign-up-container {
-				width: 50%;
 				height: 40px;
 				background-color: $dark-blue;
 				color: $light-gray;
 				margin: auto;
 				border-radius: 3px;
 				transition: 0.4s ease;
+				overflow: hidden;
+				margin-bottom: 100px;
+
 
 				&:hover {
 					background-color: $gray;
@@ -703,21 +717,63 @@ body {
 
 				}
 
+				input {
+					width: 200px;
+					height: 40px;
+					border-radius: 5px;
+					outline: none;
+					box-shadow: none;
+					border: none;
+					padding: 10px;
+				}
+
+				&>div {
+					height: 70px;
+					display: block;
+					
+				}
+
+				#scrollable-frame {
+					height: 270px;
+					overflow: scroll;
+
+					&>div {
+					}
+					.title {
+						margin-top: 10px;
+						margin-bottom: 5px;					
+					}
+				}
+				
+
+
 				#button {
 					width: 100%;
 					padding-top: 10px;
 					height: 40px;
+					cursor: pointer;
 
 					span {
 						font-size: 15px;
-						cursor: default;
+						cursor: pointer;
 					}
 				}
-					
 
-			margin-bottom: 100px;
+				#submit{
+					background-color: $blue;
+					border-radius: 5px;
+					width: 100px;
+					margin: auto;
+					margin-top: 10px;
+					height: 30px;
+					color: white;
+					padding:5px;
+					cursor: pointer;
 
+				}
+				
 			}		
+				
 		}
 
 			
