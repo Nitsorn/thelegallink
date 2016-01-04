@@ -6,8 +6,7 @@ module.exports = React.createClass({
 			<div id="nav">	
 				<a href='/#/'>
 					<div id="nav-logo-frame">
-						<div id="nav-logo">
-						</div>
+						<div id="nav-logo"/>
 					</div>
 				</a>
 			</div>

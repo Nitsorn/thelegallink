@@ -9,24 +9,6 @@ body {
   font-family: 'lane';
   color: #DADEE4; }
 
-#g-map-all {
-  height: 500px;
-  width: 100%;
-}
-.g-map-single {
-  height: 300px;
-  width: 300px;
-}
-.listing-item-img{
-  max-height: 150px;
-  border-radius: 100%;
-}
-.listing-item{
-  background: grey;
-  margin-top: 15px;
-  padding: 15px;
-}
-
 #nav {
   z-index: 10;
   position: fixed;
@@ -39,10 +21,12 @@ body {
     width: 50px;
     height: 50px;
     float: left;
-    margin: 0 20px; }
+    margin: 0 20px;
+    cursor: pointer; }
     #nav #nav-logo-frame #nav-logo {
       width: 35px;
       height: 35px;
+      cursor: pointer;
       background-image: url("../files/images/logo.png");
       background-size: 100%;
       background-repeat: no-repeat; }
@@ -127,8 +111,15 @@ body {
     color: #DADEE4;
     font-size: 17px;
     margin-top: 0px;
-    letter-spacing: 1px; }
-  #landing #search-container {
+    letter-spacing: 1px;
+    margin: auto; }
+    @media screen and (max-width: 600px) {
+      #landing h3 {
+        width: 500px; } }
+    @media screen and (max-width: 400px) {
+      #landing h3 {
+        width: 300px; } }
+  #landing #search-container, #landing #sign-up-container {
     margin-top: 10px;
     margin-left: 20px;
     text-align: center;
@@ -137,12 +128,17 @@ body {
     margin-right: auto;
     left: 0;
     right: 0; }
-    #landing #search-container > * {
+    #landing #search-container > *, #landing #sign-up-container > * {
       display: inline-block;
       vertical-align: top; }
-    #landing #search-container #search-find-container h5, #landing #search-container #search-near-container h5 {
+    #landing #search-container #search-find-container #dropdown-layer-close, #landing #search-container #search-near-container #dropdown-layer-close, #landing #sign-up-container #search-find-container #dropdown-layer-close, #landing #sign-up-container #search-near-container #dropdown-layer-close {
+      position: absolute;
+      width: 100%;
+      height: 100vh;
+      z-index: 100000; }
+    #landing #search-container #search-find-container h5, #landing #search-container #search-near-container h5, #landing #sign-up-container #search-find-container h5, #landing #sign-up-container #search-near-container h5 {
       color: #DADEE4; }
-    #landing #search-container #search-find-container .dropdown-container, #landing #search-container #search-near-container .dropdown-container {
+    #landing #search-container #search-find-container .dropdown-container, #landing #search-container #search-near-container .dropdown-container, #landing #sign-up-container #search-find-container .dropdown-container, #landing #sign-up-container #search-near-container .dropdown-container {
       transition: 0.5s ease;
       height: 60px;
       width: 330px;
@@ -150,7 +146,7 @@ body {
       margin-left: 10px;
       position: relative;
       border-radius: 3px; }
-      #landing #search-container #search-find-container .dropdown-container input, #landing #search-container #search-near-container .dropdown-container input {
+      #landing #search-container #search-find-container .dropdown-container input, #landing #search-container #search-near-container .dropdown-container input, #landing #sign-up-container #search-find-container .dropdown-container input, #landing #sign-up-container #search-near-container .dropdown-container input {
         z-index: 10000;
         position: relative;
         margin-top: 0px;
@@ -166,17 +162,17 @@ body {
         font-size: 15px;
         box-shadow: 0px 3px 4px 0px rgba(0, 0, 0, 0.5);
         letter-spacing: 1px; }
-      #landing #search-container #search-find-container .dropdown-container ::-webkit-input-placeholder, #landing #search-container #search-near-container .dropdown-container ::-webkit-input-placeholder {
+      #landing #search-container #search-find-container .dropdown-container ::-webkit-input-placeholder, #landing #search-container #search-near-container .dropdown-container ::-webkit-input-placeholder, #landing #sign-up-container #search-find-container .dropdown-container ::-webkit-input-placeholder, #landing #sign-up-container #search-near-container .dropdown-container ::-webkit-input-placeholder {
         color: #313233; }
-      #landing #search-container #search-find-container .dropdown-container :-moz-placeholder, #landing #search-container #search-near-container .dropdown-container :-moz-placeholder {
+      #landing #search-container #search-find-container .dropdown-container :-moz-placeholder, #landing #search-container #search-near-container .dropdown-container :-moz-placeholder, #landing #sign-up-container #search-find-container .dropdown-container :-moz-placeholder, #landing #sign-up-container #search-near-container .dropdown-container :-moz-placeholder {
         /* Firefox 18- */
         color: #313233; }
-      #landing #search-container #search-find-container .dropdown-container ::-moz-placeholder, #landing #search-container #search-near-container .dropdown-container ::-moz-placeholder {
+      #landing #search-container #search-find-container .dropdown-container ::-moz-placeholder, #landing #search-container #search-near-container .dropdown-container ::-moz-placeholder, #landing #sign-up-container #search-find-container .dropdown-container ::-moz-placeholder, #landing #sign-up-container #search-near-container .dropdown-container ::-moz-placeholder {
         /* Firefox 19+ */
         color: #313233; }
-      #landing #search-container #search-find-container .dropdown-container :-ms-input-placeholder, #landing #search-container #search-near-container .dropdown-container :-ms-input-placeholder {
+      #landing #search-container #search-find-container .dropdown-container :-ms-input-placeholder, #landing #search-container #search-near-container .dropdown-container :-ms-input-placeholder, #landing #sign-up-container #search-find-container .dropdown-container :-ms-input-placeholder, #landing #sign-up-container #search-near-container .dropdown-container :-ms-input-placeholder {
         color: #313233; }
-      #landing #search-container #search-find-container .dropdown-container #search-dropdown, #landing #search-container #search-near-container .dropdown-container #search-dropdown {
+      #landing #search-container #search-find-container .dropdown-container #search-dropdown, #landing #search-container #search-near-container .dropdown-container #search-dropdown, #landing #sign-up-container #search-find-container .dropdown-container #search-dropdown, #landing #sign-up-container #search-near-container .dropdown-container #search-dropdown {
         z-index: 10;
         transition: 0.45s ease;
         width: 330px;
@@ -185,11 +181,12 @@ body {
         height: 253px;
         background-color: #313233;
         box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5); }
-        #landing #search-container #search-find-container .dropdown-container #search-dropdown #left-side, #landing #search-container #search-near-container .dropdown-container #search-dropdown #left-side {
+        #landing #search-container #search-find-container .dropdown-container #search-dropdown #left-side, #landing #search-container #search-near-container .dropdown-container #search-dropdown #left-side, #landing #sign-up-container #search-find-container .dropdown-container #search-dropdown #left-side, #landing #sign-up-container #search-near-container .dropdown-container #search-dropdown #left-side {
           display: inline-block;
           padding-top: 15px;
           vertical-align: top;
           float: left;
+          cursor: pointer;
           height: 253px;
           width: 50px;
           font-size: 12px;
@@ -198,40 +195,40 @@ body {
           transition: 0.5s ease;
           overflow: hidden;
           z-index: -11; }
-          #landing #search-container #search-find-container .dropdown-container #search-dropdown #left-side:hover, #landing #search-container #search-near-container .dropdown-container #search-dropdown #left-side:hover {
+          #landing #search-container #search-find-container .dropdown-container #search-dropdown #left-side:hover, #landing #search-container #search-near-container .dropdown-container #search-dropdown #left-side:hover, #landing #sign-up-container #search-find-container .dropdown-container #search-dropdown #left-side:hover, #landing #sign-up-container #search-near-container .dropdown-container #search-dropdown #left-side:hover {
             width: 180px;
             box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5); }
-          #landing #search-container #search-find-container .dropdown-container #search-dropdown #left-side .left-wrapper, #landing #search-container #search-near-container .dropdown-container #search-dropdown #left-side .left-wrapper {
+          #landing #search-container #search-find-container .dropdown-container #search-dropdown #left-side .left-wrapper, #landing #search-container #search-near-container .dropdown-container #search-dropdown #left-side .left-wrapper, #landing #sign-up-container #search-find-container .dropdown-container #search-dropdown #left-side .left-wrapper, #landing #sign-up-container #search-near-container .dropdown-container #search-dropdown #left-side .left-wrapper {
             width: 180px;
             float: left;
             text-align: left;
             transition: 0.3s ease;
             height: 34px; }
-            #landing #search-container #search-find-container .dropdown-container #search-dropdown #left-side .left-wrapper:hover, #landing #search-container #search-near-container .dropdown-container #search-dropdown #left-side .left-wrapper:hover {
+            #landing #search-container #search-find-container .dropdown-container #search-dropdown #left-side .left-wrapper:hover, #landing #search-container #search-near-container .dropdown-container #search-dropdown #left-side .left-wrapper:hover, #landing #sign-up-container #search-find-container .dropdown-container #search-dropdown #left-side .left-wrapper:hover, #landing #sign-up-container #search-near-container .dropdown-container #search-dropdown #left-side .left-wrapper:hover {
               padding-left: 10px; }
-            #landing #search-container #search-find-container .dropdown-container #search-dropdown #left-side .left-wrapper img, #landing #search-container #search-near-container .dropdown-container #search-dropdown #left-side .left-wrapper img {
+            #landing #search-container #search-find-container .dropdown-container #search-dropdown #left-side .left-wrapper img, #landing #search-container #search-near-container .dropdown-container #search-dropdown #left-side .left-wrapper img, #landing #sign-up-container #search-find-container .dropdown-container #search-dropdown #left-side .left-wrapper img, #landing #sign-up-container #search-near-container .dropdown-container #search-dropdown #left-side .left-wrapper img {
               vertical-align: middle;
               display: inline-block;
               max-width: 30px;
               margin: 0px 5px 5px 10px;
               max-height: 30px;
               padding: 8px 6px 5px 7.5px; }
-            #landing #search-container #search-find-container .dropdown-container #search-dropdown #left-side .left-wrapper .legal, #landing #search-container #search-near-container .dropdown-container #search-dropdown #left-side .left-wrapper .legal {
+            #landing #search-container #search-find-container .dropdown-container #search-dropdown #left-side .left-wrapper .legal, #landing #search-container #search-near-container .dropdown-container #search-dropdown #left-side .left-wrapper .legal, #landing #sign-up-container #search-find-container .dropdown-container #search-dropdown #left-side .left-wrapper .legal, #landing #sign-up-container #search-near-container .dropdown-container #search-dropdown #left-side .left-wrapper .legal {
               margin-left: 30px !important; }
-            #landing #search-container #search-find-container .dropdown-container #search-dropdown #left-side .left-wrapper p, #landing #search-container #search-near-container .dropdown-container #search-dropdown #left-side .left-wrapper p {
-              cursor: default;
+            #landing #search-container #search-find-container .dropdown-container #search-dropdown #left-side .left-wrapper p, #landing #search-container #search-near-container .dropdown-container #search-dropdown #left-side .left-wrapper p, #landing #sign-up-container #search-find-container .dropdown-container #search-dropdown #left-side .left-wrapper p, #landing #sign-up-container #search-near-container .dropdown-container #search-dropdown #left-side .left-wrapper p {
+              cursor: pointer;
               vertical-align: middle;
               display: inline-block;
               color: #314A6F;
               margin-top: 5px;
               padding-left: 5px;
               width: 120px; }
-          #landing #search-container #search-find-container .dropdown-container #search-dropdown #left-side .all, #landing #search-container #search-near-container .dropdown-container #search-dropdown #left-side .all {
+          #landing #search-container #search-find-container .dropdown-container #search-dropdown #left-side .all, #landing #search-container #search-near-container .dropdown-container #search-dropdown #left-side .all, #landing #sign-up-container #search-find-container .dropdown-container #search-dropdown #left-side .all, #landing #sign-up-container #search-near-container .dropdown-container #search-dropdown #left-side .all {
             background-color: #939598;
             color: #DADEE4; }
-        #landing #search-container #search-find-container .dropdown-container #search-dropdown #right-side, #landing #search-container #search-near-container .dropdown-container #search-dropdown #right-side {
+        #landing #search-container #search-find-container .dropdown-container #search-dropdown #right-side, #landing #search-container #search-near-container .dropdown-container #search-dropdown #right-side, #landing #sign-up-container #search-find-container .dropdown-container #search-dropdown #right-side, #landing #sign-up-container #search-near-container .dropdown-container #search-dropdown #right-side {
           position: absolute;
-          margin-left: -140px;
+          margin-left: -120px;
           z-index: -10;
           display: inline-block;
           padding-top: 25px;
@@ -240,21 +237,21 @@ body {
           background-color: #313233;
           float: left;
           text-align: left;
-          width: 280px;
+          width: 270px;
           height: 253px;
           overflow-y: scroll;
           overflow-x: hidden;
           border-radius: 0 0 3px 0; }
-          #landing #search-container #search-find-container .dropdown-container #search-dropdown #right-side p, #landing #search-container #search-near-container .dropdown-container #search-dropdown #right-side p {
-            cursor: default;
+          #landing #search-container #search-find-container .dropdown-container #search-dropdown #right-side p, #landing #search-container #search-near-container .dropdown-container #search-dropdown #right-side p, #landing #sign-up-container #search-find-container .dropdown-container #search-dropdown #right-side p, #landing #sign-up-container #search-near-container .dropdown-container #search-dropdown #right-side p {
+            cursor: pointer;
             transition: 0.3s ease;
-            width: 170px;
+            width: 200px;
             margin: auto;
-            margin-top: 5px;
+            margin-top: 8px;
             font-size: 17px; }
-            #landing #search-container #search-find-container .dropdown-container #search-dropdown #right-side p:hover, #landing #search-container #search-near-container .dropdown-container #search-dropdown #right-side p:hover {
+            #landing #search-container #search-find-container .dropdown-container #search-dropdown #right-side p:hover, #landing #search-container #search-near-container .dropdown-container #search-dropdown #right-side p:hover, #landing #sign-up-container #search-find-container .dropdown-container #search-dropdown #right-side p:hover, #landing #sign-up-container #search-near-container .dropdown-container #search-dropdown #right-side p:hover {
               padding-left: 10px; }
-      #landing #search-container #search-find-container .dropdown-container #go-container, #landing #search-container #search-near-container .dropdown-container #go-container {
+      #landing #search-container #search-find-container .dropdown-container #go-container, #landing #search-container #search-near-container .dropdown-container #go-container, #landing #sign-up-container #search-find-container .dropdown-container #go-container, #landing #sign-up-container #search-near-container .dropdown-container #go-container {
         width: 50px;
         height: 40.19px;
         border-radius: 0 3px 3px 0;
@@ -263,19 +260,20 @@ body {
         vertical-align: top;
         z-index: 100000;
         position: relative;
-        box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.5); }
-        #landing #search-container #search-find-container .dropdown-container #go-container img, #landing #search-container #search-near-container .dropdown-container #go-container img {
+        box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.5);
+        cursor: pointer; }
+        #landing #search-container #search-find-container .dropdown-container #go-container img, #landing #search-container #search-near-container .dropdown-container #go-container img, #landing #sign-up-container #search-find-container .dropdown-container #go-container img, #landing #sign-up-container #search-near-container .dropdown-container #go-container img {
           max-width: 20px;
           max-height: 20px;
           margin: 10 15; }
-    #landing #search-container #search-near-container {
+    #landing #search-container #search-near-container, #landing #sign-up-container #search-near-container {
       margin-right: 10px; }
-      #landing #search-container #search-near-container #search-near {
+      #landing #search-container #search-near-container #search-near, #landing #sign-up-container #search-near-container #search-near {
         border-radius: 3px 0 0 3px; }
-    #landing #search-container #search-find-container {
+    #landing #search-container #search-find-container, #landing #sign-up-container #search-find-container {
       width: 330px;
       margin-right: 20px; }
-      #landing #search-container #search-find-container #dropdown-input-container {
+      #landing #search-container #search-find-container #dropdown-input-container, #landing #sign-up-container #search-find-container #dropdown-input-container {
         background-color: white;
         width: 330px;
         z-index: 1000;
@@ -284,40 +282,42 @@ body {
         outline: none;
         background-color: #DADEE4;
         box-shadow: 0px 3px 4px 0px rgba(0, 0, 0, 0.5); }
-        #landing #search-container #search-find-container #dropdown-input-container #cat-image {
+        #landing #search-container #search-find-container #dropdown-input-container #cat-image, #landing #sign-up-container #search-find-container #dropdown-input-container #cat-image {
           width: 50px;
           height: 40.19px;
           border-radius: 3px 0 0 3px;
           position: relative;
+          cursor: pointer;
           background-color: #314A6F;
           display: inline-block;
           vertical-align: top;
           float: left;
           z-index: 100000;
           box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.5); }
-          #landing #search-container #search-find-container #dropdown-input-container #cat-image > * {
+          #landing #search-container #search-find-container #dropdown-input-container #cat-image > *, #landing #sign-up-container #search-find-container #dropdown-input-container #cat-image > * {
             display: inline-block;
             vertical-align: middle; }
-          #landing #search-container #search-find-container #dropdown-input-container #cat-image img {
+          #landing #search-container #search-find-container #dropdown-input-container #cat-image img, #landing #sign-up-container #search-find-container #dropdown-input-container #cat-image img {
             height: 20px;
             width: auto;
             margin-top: 10px; }
-          #landing #search-container #search-find-container #dropdown-input-container #cat-image span {
+          #landing #search-container #search-find-container #dropdown-input-container #cat-image span, #landing #sign-up-container #search-find-container #dropdown-input-container #cat-image span {
             width: 100px;
             padding-left: 5px;
             color: black; }
-        #landing #search-container #search-find-container #dropdown-input-container #search-find {
+        #landing #search-container #search-find-container #dropdown-input-container #search-find, #landing #sign-up-container #search-find-container #dropdown-input-container #search-find {
           width: 240px;
           display: inline-block;
           vertical-align: top;
           border-radius: 0;
           box-shadow: none;
           box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.5); }
-        #landing #search-container #search-find-container #dropdown-input-container .dropdown-arrow {
+        #landing #search-container #search-find-container #dropdown-input-container .dropdown-arrow, #landing #sign-up-container #search-find-container #dropdown-input-container .dropdown-arrow {
           display: inline-block;
           vertical-align: top;
           z-index: 10000;
           position: relative;
+          cursor: pointer;
           margin-top: 0px;
           width: 40px;
           height: 40px;
@@ -329,7 +329,7 @@ body {
           transition: 0.5s ease-in;
           font-size: 15px;
           background-size: 100%; }
-          #landing #search-container #search-find-container #dropdown-input-container .dropdown-arrow #arrow-gray {
+          #landing #search-container #search-find-container #dropdown-input-container .dropdown-arrow #arrow-gray, #landing #sign-up-container #search-find-container #dropdown-input-container .dropdown-arrow #arrow-gray {
             background-image: url("../files/images/dropdown-gray.png");
             width: 15px;
             height: 10px;
@@ -337,21 +337,38 @@ body {
             background-size: 100%;
             background-repeat: no-repeat;
             transition: 0.3s ease; }
+  #landing #top-ten {
+    font-size: 20px;
+    border-bottom: 2px solid #939598;
+    width: 315px;
+    margin: auto;
+    margin-top: 130px;
+    transition: 0.3s ease;
+    cursor: pointer; }
+    @media screen and (max-width: 700px) {
+      #landing #top-ten {
+        margin-top: 240px;
+        font-size: 17px;
+        width: 230px; } }
+    #landing #top-ten:hover {
+      background-color: #939598;
+      border-radius: 3px;
+      color: #DADEE4;
+      box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.6); }
   #landing #scroll-down {
     position: absolute;
-    margin-left: auto;
-    margin-right: auto;
-    left: 0;
-    right: 0;
-    width: 20px;
-    height: 50px;
-    background-image: url("../files/images/scroll-down.png");
-    background-size: 100%;
+    margin: 10px;
+    float: right;
+    width: 120px;
+    height: 20px;
     background-repeat: no-repeat;
     bottom: 0px;
-    transition: 0.3s ease; }
+    right: 40px;
+    transition: 0.3s ease;
+    color: #939598; }
     #landing #scroll-down:hover {
-      bottom: -5px; }
+      color: #DADEE4;
+      bottom: 3px; }
 
 #test {
   margin-top: 230px;
@@ -366,6 +383,7 @@ body {
   top: 0;
   box-shadow: -2px 0px 3px 0px rgba(0, 0, 0, 0.7); }
   #sidebar-container #toggle-tab {
+    cursor: pointer;
     width: 35px;
     background-color: #1F2938;
     height: 100vh;
@@ -385,8 +403,9 @@ body {
       margin-bottom: auto;
       top: 0;
       bottom: 0;
-      transform: rotate(-90deg);
+      transform: rotate(90deg);
       margin-left: 9px;
+      transition-delay: 3s ease;
       transition: 0.6s ease; }
   #sidebar-container #sidebar-content {
     float: right;
@@ -394,6 +413,7 @@ body {
     margin: auto;
     background-color: #314A6F;
     height: 101vh;
+    overflow: scroll;
     background-image: url("../files/images/background-sidebar-gray.png");
     background-size: auto 100%;
     background-repeat: no-repeat; }
@@ -402,6 +422,7 @@ body {
       width: 85%;
       height: 100vh;
       margin: auto;
+      position: relative;
       letter-spacing: 2px; }
       #sidebar-container #sidebar-content #sidebar-content-container h3 {
         margin-top: 30px;
@@ -441,7 +462,8 @@ body {
             margin-right: 3px;
             transition: 0.3s ease;
             position: relative;
-            padding: 2px; }
+            padding: 2px;
+            cursor: pointer; }
             #sidebar-container #sidebar-content #sidebar-content-container #free div #number #old {
               text-decoration: line-through;
               font-size: 13px; }
@@ -486,21 +508,61 @@ body {
           float: right;
           margin-right: 4px; }
       #sidebar-container #sidebar-content #sidebar-content-container #sign-up-container {
-        width: 50%;
         height: 40px;
-        background-color: #1F2938;
+        background-color: #314A6F;
         color: #DADEE4;
         margin: auto;
         border-radius: 3px;
         transition: 0.4s ease;
+        overflow: hidden;
         margin-bottom: 100px; }
-        #sidebar-container #sidebar-content #sidebar-content-container #sign-up-container:hover {
-          background-color: #939598;
-          color: #1F2938; }
+        #sidebar-container #sidebar-content #sidebar-content-container #sign-up-container input {
+          width: 200px;
+          height: 40px;
+          border-radius: 5px;
+          outline: none;
+          box-shadow: none;
+          border: none;
+          padding: 10px;
+          color: black;
+          box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.6); }
+        #sidebar-container #sidebar-content #sidebar-content-container #sign-up-container > div {
+          height: 70px;
+          display: block; }
+        #sidebar-container #sidebar-content #sidebar-content-container #sign-up-container #scrollable-frame {
+          height: 270px;
+          overflow: scroll; }
+          #sidebar-container #sidebar-content #sidebar-content-container #sign-up-container #scrollable-frame .title {
+            margin-top: 10px;
+            margin-bottom: 5px; }
         #sidebar-container #sidebar-content #sidebar-content-container #sign-up-container #button {
           width: 100%;
           padding-top: 10px;
-          height: 40px; }
+          height: 40px;
+          cursor: pointer;
+          background-color: #1F2938;
+          border-radius: 2px;
+          box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.6);
+          transition: 0.2s ease; }
           #sidebar-container #sidebar-content #sidebar-content-container #sign-up-container #button span {
             font-size: 15px;
-            cursor: default; }
+            cursor: pointer;
+            color: #DADEE4; }
+          #sidebar-container #sidebar-content #sidebar-content-container #sign-up-container #button:hover {
+            background-color: #314A6F; }
+        #sidebar-container #sidebar-content #sidebar-content-container #sign-up-container #submit {
+          background-color: #1F2938;
+          border-radius: 5px;
+          width: 100px;
+          margin: auto;
+          margin-top: 10px;
+          height: 30px;
+          color: white;
+          padding: 5px;
+          cursor: pointer;
+          transition: 0.2s ease; }
+          #sidebar-container #sidebar-content #sidebar-content-container #sign-up-container #submit:hover {
+            background-color: #314A6F; }
+      #sidebar-container #sidebar-content #sidebar-content-container #orEmail {
+        margin-top: 100px;
+        color: #DADEE4; }
