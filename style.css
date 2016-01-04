@@ -9,6 +9,24 @@ body {
   font-family: 'lane';
   color: #DADEE4; }
 
+#g-map-all {
+  height: 500px;
+  width: 100%;
+}
+.g-map-single {
+  height: 300px;
+  width: 300px;
+}
+.listing-item-img{
+  max-height: 150px;
+  border-radius: 100%;
+}
+.listing-item{
+  background: grey;
+  margin-top: 15px;
+  padding: 15px;
+}
+
 #nav {
   z-index: 10;
   position: fixed;
