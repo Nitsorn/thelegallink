@@ -43,10 +43,12 @@ body {
 		height: 50px;
 		float: left;
 		margin:0 20px; 
+		cursor: pointer;
 
 		#nav-logo {
 			width: 35px;
 			height: 35px;
+			cursor: pointer;
 			background-image: url('../files/images/logo.png');
 			background-size: 100%;
 			background-repeat: no-repeat;
@@ -163,6 +165,14 @@ body {
 		font-size: 17px;
 		margin-top: 0px;
 		letter-spacing: 1px;
+		margin: auto;
+
+		@media screen and (max-width: 600px) {
+			width: 500px;
+		}
+		@media screen and (max-width: 400px) {
+			width: 300px;
+		}
 
 	}
 	// & > h5 {
@@ -262,6 +272,7 @@ body {
 						padding-top: 15px;
 						vertical-align: top;
 						float:left;
+						cursor: pointer;
 						height: 253px;
 						width: 50px;
 						font-size: 12px;
@@ -306,7 +317,7 @@ body {
 
 							
 							p {
-								cursor: default;
+								cursor: pointer;
 								vertical-align: middle;
 								display: inline-block;
 								color: $blue;
@@ -328,7 +339,7 @@ body {
 					}
 					#right-side {
 						position: absolute;
-						margin-left: -140px;
+						margin-left: -120px;
 						z-index: -10;
 						display: inline-block;
 						padding-top: 25px;
@@ -337,7 +348,7 @@ body {
 						background-color: $dark-gray;
 						float:left;
 						text-align: left;
-						width: 280px;
+						width: 270px;
 						height: 253px;
 						overflow-y: scroll;
 						overflow-x: hidden;
@@ -346,11 +357,11 @@ body {
 
 						p {
 							
-							cursor: default;
+							cursor: pointer;
 							transition: 0.3s ease;
-							width: 170px;
+							width: 200px;
 							margin: auto;
-							margin-top: 5px;
+							margin-top: 8px;
 							font-size: 17px;
 
 							&:hover {
@@ -374,6 +385,7 @@ body {
 					z-index: 100000;
 					position: relative;
 					box-shadow:0px 0px 6px 0px rgba(black, 0.5);
+					cursor: pointer;
 
 					img {
 						max-width: 20px;
@@ -414,6 +426,7 @@ body {
 					height: 40.19px;
 					border-radius: 3px 0 0 3px;
 					position: relative;
+					cursor: pointer;
 					background-color: $blue;
 					display: inline-block;
 					vertical-align: top;
@@ -456,6 +469,7 @@ body {
 					vertical-align: top;
 					z-index: 10000;
 					position: relative;
+					cursor: pointer;
 					margin-top: 0px;
 					width: 40px;
 					height: 40px;
@@ -481,26 +495,56 @@ body {
 				}
 			}
 		}
+	}
 
-		
+	#top-ten {
+		font-size: 20px;
+		border-bottom: 2px solid $gray;
+		width: 315px;
+		margin:auto;
+		margin-top: 130px;
+
+		@media screen and (max-width: 700px) {
+			margin-top: 240px;
+			font-size: 17px;
+			width: 230px;
+
+		}
+
+		transition: 0.3s ease;
+		cursor: pointer;
+
+		&:hover {
+			background-color: $gray;
+			border-radius: 3px;
+			color: $light-gray;
+			box-shadow: 0px 1px 3px 0px rgba(black, 0.6)
+
+
+		}
 	}
 
 	#scroll-down {
 		position: absolute;
-		margin-left: auto;
-		margin-right: auto;
-		left: 0;
-		right: 0;
-		width: 20px;
-		height: 50px;
-		background-image: url('../files/images/scroll-down.png');
-		background-size: 100%;
+		// margin-left: auto;
+		// margin-right: auto;
+		// left: 0;
+		// right: 0;
+		margin: 10px;
+		float: right;
+		width: 120px;
+		height: 20px;
+		// background-image: url('../files/images/scroll-down.png');
+		// background-size: 100%;
 		background-repeat: no-repeat;
 		bottom: 0px;
+		right: 40px;
 		transition: 0.3s ease;
+		color: $gray;
 
 		&:hover {
-			bottom: -5px;
+			color: $light-gray;
+			bottom: 3px;
 		}
 	}
 
@@ -526,6 +570,7 @@ body {
 	box-shadow:-2px 0px 3px 0px rgba(black, 0.7);
 
 	#toggle-tab {
+		cursor: pointer;
 		width: 35px;
 		background-color: $dark-blue;
 		height: 100vh;
@@ -641,6 +686,7 @@ body {
 						transition: 0.3s ease;
 						position: relative;
 						padding: 2px;
+						cursor: pointer;
 
 						#old {
 							text-decoration: line-through;
@@ -702,7 +748,7 @@ body {
 
 			#sign-up-container {
 				height: 40px;
-				background-color: $dark-blue;
+				background-color: $blue;
 				color: $light-gray;
 				margin: auto;
 				border-radius: 3px;
@@ -711,11 +757,7 @@ body {
 				margin-bottom: 100px;
 
 
-				&:hover {
-					background-color: $gray;
-					color: $dark-blue;
-
-				}
+				
 
 				input {
 					width: 200px;
@@ -725,6 +767,8 @@ body {
 					box-shadow: none;
 					border: none;
 					padding: 10px;
+					color: black;
+					box-shadow: 0px 1px 2px 0px rgba(black, 0.6)
 				}
 
 				&>div {
@@ -752,15 +796,22 @@ body {
 					padding-top: 10px;
 					height: 40px;
 					cursor: pointer;
-
+					background-color: $dark-blue;
+					border-radius: 2px;
+					box-shadow: 0px 1px 3px 0px rgba(black, 0.6);
+					transition: 0.2s ease;
 					span {
 						font-size: 15px;
 						cursor: pointer;
+						color: $light-gray;
+					}
+					&:hover {
+						background-color: $blue
 					}
 				}
 
 				#submit{
-					background-color: $blue;
+					background-color: $dark-blue;
 					border-radius: 5px;
 					width: 100px;
 					margin: auto;
@@ -769,10 +820,35 @@ body {
 					color: white;
 					padding:5px;
 					cursor: pointer;
+					transition: 0.2s ease;
+
+					&:hover {
+						// color: $dark-blue;
+						background-color: $blue;
+					}
 
 				}
-				
-			}		
+			}
+			#orEmail {
+				margin-top: 100px;
+				color: $light-gray;
+			}
+			// #terms {
+			// 	position: absolute;
+			// 	bottom: 10px;
+			// 	margin-left: auto;
+			// 	margin-right: auto;
+			// 	left: 0;
+			// 	right: 0;
+			// 	color: $light-gray;
+			// 	font-size: 13px;
+			// 	cursor: pointer;
+			// 	transition: 0.2s ease;
+
+			// 	&:hover {
+			// 		bottom: 13px;
+			// 	}
+			// }		
 				
 		}
 

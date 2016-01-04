@@ -8,6 +8,7 @@ module.exports = React.createClass({
 			width: 50,
 			backgroundColor: '',
 			color: '',
+			count: 0,
 		})
 	},
 
@@ -19,11 +20,18 @@ module.exports = React.createClass({
 		}
 	},
 
+	componentDidUpdate: function() {
+		if (this.props.count !== this.state.count) {
+			this.setState({formshow: true, height: 330, width: 100, backgroundColor: '#939598', color: '#1F2938'})
+			this.setState({count: this.props.count})
+		}
+	},
+
 
 	render: function(){
 
-		var containerstyle = {height: this.state.height + 'px', width: this.state.width + '%', backgroundColor: this.state.backgroundColor, color: this.state.color}
-
+		var containerstyle = {height: this.state.height + 'px', width: this.state.width + '%', backgroundColor: this.state.backgroundColor}
+		var scrollablestyle = {color: this.state.color}
 		return (
 			<div id='sign-up-container' style={containerstyle}>
 
@@ -49,9 +57,9 @@ module.exports = React.createClass({
 						</div>
 						<div id='type'>
 							<div className='title'> Contact phone number </div>
-							<input type='text' placeholder='Eg: 604-XXX-XXXX'/> 
+							<input type='text' placeholder='Eg: 604-123-4567'/> 
 						</div>
-						<div id='submit'>
+						<div onClick={this.toggleFormOpen} id='submit'>
 							<span> Submit </span>
 						</div>
 					</div>

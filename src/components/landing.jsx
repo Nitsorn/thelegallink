@@ -11,7 +11,7 @@ module.exports = React.createClass({
 		return ({
 			sideBarOpen: true,
 			marginRight: 0,
-			dropdownshown: true
+			toggleCloseDrop: 0
 		})
 	},
 
@@ -27,12 +27,16 @@ module.exports = React.createClass({
 	},
 
 	toggleOpenSideBarClose: function() {
-		this.setState({dropdownshown: false});
+		this.setState({toggleCloseDrop: this.state.toggleCloseDrop + 1});
 		if (this.state.sideBarOpen) {
 			this.setState({sideBarOpen: false, marginRight: -315})
 			$('#arrow-side').css('transform','rotate(-90deg');
 		}
 
+	},
+
+	stopPropagation: function(e) {
+		e.stopPropagation()
 	},
 
 	componentDidUpdate: function() {
@@ -51,21 +55,24 @@ module.exports = React.createClass({
 					marginRight={marginRight} 
 					toggleOpenSideBar={this.toggleOpenSideBar}/>
 				<div id="logo"/>	
-				<h3> Find Service Professionals around your area and Vancouver</h3>
+				<h3> Find Service Professionals Around Your Area And Vancouver</h3>
 
 				<div id="search-container">
 					<div id="search-find-container">
 						<h5> Find: </h5> 
-						<SearchBox dropdownshown={this.state.dropdowndownshown}/>
+						<SearchBox stopPropagation={this.stopPropagation} dropdownshown={this.state.dropdowndownshown} toggleCloseDrop={this.state.toggleCloseDrop}/>
 					</div>	
 					<div id="search-near-container">
 						<h5> Near: </h5> 
 						<SearchBoxNear toggleOpenSideBar={this.toggleOpenSideBar}/>
 					</div>
 				</div>
+				<div id='top-ten' onClick={this.toggleOpenSideBar}>
+					<div> or View Our Top Ten Professionals... </div>
+				</div>
 
-				<a href='#footer' onClick={this.componentDidUpdate}>
-					<div  id='scroll-down' />
+				<a href = '#footer' onClick={this.componentDidUpdate}>
+					<div  id='scroll-down'> Terms & Conditions </div>
 				</a>
 			</div>
 		)

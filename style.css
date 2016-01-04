@@ -9,28 +9,6 @@ body {
   font-family: 'lane';
   color: #DADEE4; }
 
-#g-map-all{
-  height:40%;
-  width: 100%;
-}
-
-.g-map-single{
-  height:300px;
-  width: 300px;
-}
-
-.listing-item-img{
-  max-width: 100px;
-  border-radius:100%;
-  height:100px;
-}
-
-.listing-item{
-  margin-top: 15px;
-  background: grey;
-  padding: 30px;
-}
-
 #nav {
   z-index: 10;
   position: fixed;
@@ -43,10 +21,12 @@ body {
     width: 50px;
     height: 50px;
     float: left;
-    margin: 0 20px; }
+    margin: 0 20px;
+    cursor: pointer; }
     #nav #nav-logo-frame #nav-logo {
       width: 35px;
       height: 35px;
+      cursor: pointer;
       background-image: url("../files/images/logo.png");
       background-size: 100%;
       background-repeat: no-repeat; }
@@ -131,7 +111,14 @@ body {
     color: #DADEE4;
     font-size: 17px;
     margin-top: 0px;
-    letter-spacing: 1px; }
+    letter-spacing: 1px;
+    margin: auto; }
+    @media screen and (max-width: 600px) {
+      #landing h3 {
+        width: 500px; } }
+    @media screen and (max-width: 400px) {
+      #landing h3 {
+        width: 300px; } }
   #landing #search-container, #landing #sign-up-container {
     margin-top: 10px;
     margin-left: 20px;
@@ -199,6 +186,7 @@ body {
           padding-top: 15px;
           vertical-align: top;
           float: left;
+          cursor: pointer;
           height: 253px;
           width: 50px;
           font-size: 12px;
@@ -228,7 +216,7 @@ body {
             #landing #search-container #search-find-container .dropdown-container #search-dropdown #left-side .left-wrapper .legal, #landing #search-container #search-near-container .dropdown-container #search-dropdown #left-side .left-wrapper .legal, #landing #sign-up-container #search-find-container .dropdown-container #search-dropdown #left-side .left-wrapper .legal, #landing #sign-up-container #search-near-container .dropdown-container #search-dropdown #left-side .left-wrapper .legal {
               margin-left: 30px !important; }
             #landing #search-container #search-find-container .dropdown-container #search-dropdown #left-side .left-wrapper p, #landing #search-container #search-near-container .dropdown-container #search-dropdown #left-side .left-wrapper p, #landing #sign-up-container #search-find-container .dropdown-container #search-dropdown #left-side .left-wrapper p, #landing #sign-up-container #search-near-container .dropdown-container #search-dropdown #left-side .left-wrapper p {
-              cursor: default;
+              cursor: pointer;
               vertical-align: middle;
               display: inline-block;
               color: #314A6F;
@@ -240,7 +228,7 @@ body {
             color: #DADEE4; }
         #landing #search-container #search-find-container .dropdown-container #search-dropdown #right-side, #landing #search-container #search-near-container .dropdown-container #search-dropdown #right-side, #landing #sign-up-container #search-find-container .dropdown-container #search-dropdown #right-side, #landing #sign-up-container #search-near-container .dropdown-container #search-dropdown #right-side {
           position: absolute;
-          margin-left: -140px;
+          margin-left: -120px;
           z-index: -10;
           display: inline-block;
           padding-top: 25px;
@@ -249,17 +237,17 @@ body {
           background-color: #313233;
           float: left;
           text-align: left;
-          width: 280px;
+          width: 270px;
           height: 253px;
           overflow-y: scroll;
           overflow-x: hidden;
           border-radius: 0 0 3px 0; }
           #landing #search-container #search-find-container .dropdown-container #search-dropdown #right-side p, #landing #search-container #search-near-container .dropdown-container #search-dropdown #right-side p, #landing #sign-up-container #search-find-container .dropdown-container #search-dropdown #right-side p, #landing #sign-up-container #search-near-container .dropdown-container #search-dropdown #right-side p {
-            cursor: default;
+            cursor: pointer;
             transition: 0.3s ease;
-            width: 170px;
+            width: 200px;
             margin: auto;
-            margin-top: 5px;
+            margin-top: 8px;
             font-size: 17px; }
             #landing #search-container #search-find-container .dropdown-container #search-dropdown #right-side p:hover, #landing #search-container #search-near-container .dropdown-container #search-dropdown #right-side p:hover, #landing #sign-up-container #search-find-container .dropdown-container #search-dropdown #right-side p:hover, #landing #sign-up-container #search-near-container .dropdown-container #search-dropdown #right-side p:hover {
               padding-left: 10px; }
@@ -272,7 +260,8 @@ body {
         vertical-align: top;
         z-index: 100000;
         position: relative;
-        box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.5); }
+        box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.5);
+        cursor: pointer; }
         #landing #search-container #search-find-container .dropdown-container #go-container img, #landing #search-container #search-near-container .dropdown-container #go-container img, #landing #sign-up-container #search-find-container .dropdown-container #go-container img, #landing #sign-up-container #search-near-container .dropdown-container #go-container img {
           max-width: 20px;
           max-height: 20px;
@@ -298,6 +287,7 @@ body {
           height: 40.19px;
           border-radius: 3px 0 0 3px;
           position: relative;
+          cursor: pointer;
           background-color: #314A6F;
           display: inline-block;
           vertical-align: top;
@@ -327,6 +317,7 @@ body {
           vertical-align: top;
           z-index: 10000;
           position: relative;
+          cursor: pointer;
           margin-top: 0px;
           width: 40px;
           height: 40px;
@@ -346,21 +337,38 @@ body {
             background-size: 100%;
             background-repeat: no-repeat;
             transition: 0.3s ease; }
+  #landing #top-ten {
+    font-size: 20px;
+    border-bottom: 2px solid #939598;
+    width: 315px;
+    margin: auto;
+    margin-top: 130px;
+    transition: 0.3s ease;
+    cursor: pointer; }
+    @media screen and (max-width: 700px) {
+      #landing #top-ten {
+        margin-top: 240px;
+        font-size: 17px;
+        width: 230px; } }
+    #landing #top-ten:hover {
+      background-color: #939598;
+      border-radius: 3px;
+      color: #DADEE4;
+      box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.6); }
   #landing #scroll-down {
     position: absolute;
-    margin-left: auto;
-    margin-right: auto;
-    left: 0;
-    right: 0;
-    width: 20px;
-    height: 50px;
-    background-image: url("../files/images/scroll-down.png");
-    background-size: 100%;
+    margin: 10px;
+    float: right;
+    width: 120px;
+    height: 20px;
     background-repeat: no-repeat;
     bottom: 0px;
-    transition: 0.3s ease; }
+    right: 40px;
+    transition: 0.3s ease;
+    color: #939598; }
     #landing #scroll-down:hover {
-      bottom: -5px; }
+      color: #DADEE4;
+      bottom: 3px; }
 
 #test {
   margin-top: 230px;
@@ -375,6 +383,7 @@ body {
   top: 0;
   box-shadow: -2px 0px 3px 0px rgba(0, 0, 0, 0.7); }
   #sidebar-container #toggle-tab {
+    cursor: pointer;
     width: 35px;
     background-color: #1F2938;
     height: 100vh;
@@ -453,7 +462,8 @@ body {
             margin-right: 3px;
             transition: 0.3s ease;
             position: relative;
-            padding: 2px; }
+            padding: 2px;
+            cursor: pointer; }
             #sidebar-container #sidebar-content #sidebar-content-container #free div #number #old {
               text-decoration: line-through;
               font-size: 13px; }
@@ -499,16 +509,13 @@ body {
           margin-right: 4px; }
       #sidebar-container #sidebar-content #sidebar-content-container #sign-up-container {
         height: 40px;
-        background-color: #1F2938;
+        background-color: #314A6F;
         color: #DADEE4;
         margin: auto;
         border-radius: 3px;
         transition: 0.4s ease;
         overflow: hidden;
         margin-bottom: 100px; }
-        #sidebar-container #sidebar-content #sidebar-content-container #sign-up-container:hover {
-          background-color: #939598;
-          color: #1F2938; }
         #sidebar-container #sidebar-content #sidebar-content-container #sign-up-container input {
           width: 200px;
           height: 40px;
@@ -516,7 +523,9 @@ body {
           outline: none;
           box-shadow: none;
           border: none;
-          padding: 10px; }
+          padding: 10px;
+          color: black;
+          box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.6); }
         #sidebar-container #sidebar-content #sidebar-content-container #sign-up-container > div {
           height: 70px;
           display: block; }
@@ -530,12 +539,19 @@ body {
           width: 100%;
           padding-top: 10px;
           height: 40px;
-          cursor: pointer; }
+          cursor: pointer;
+          background-color: #1F2938;
+          border-radius: 2px;
+          box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.6);
+          transition: 0.2s ease; }
           #sidebar-container #sidebar-content #sidebar-content-container #sign-up-container #button span {
             font-size: 15px;
-            cursor: pointer; }
+            cursor: pointer;
+            color: #DADEE4; }
+          #sidebar-container #sidebar-content #sidebar-content-container #sign-up-container #button:hover {
+            background-color: #314A6F; }
         #sidebar-container #sidebar-content #sidebar-content-container #sign-up-container #submit {
-          background-color: #314A6F;
+          background-color: #1F2938;
           border-radius: 5px;
           width: 100px;
           margin: auto;
@@ -543,4 +559,10 @@ body {
           height: 30px;
           color: white;
           padding: 5px;
-          cursor: pointer; }
+          cursor: pointer;
+          transition: 0.2s ease; }
+          #sidebar-container #sidebar-content #sidebar-content-container #sign-up-container #submit:hover {
+            background-color: #314A6F; }
+      #sidebar-container #sidebar-content #sidebar-content-container #orEmail {
+        margin-top: 100px;
+        color: #DADEE4; }

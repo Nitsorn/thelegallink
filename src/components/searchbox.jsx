@@ -21,37 +21,97 @@ module.exports = React.createClass({
 					breakdowns: [
 						{
 							name: 'Civil Lawyers',
-							url: '/#/lawyer-civil',
 						},
 						{
-							name: 'So many other stuff',
-							url: '/#/lawyer-family',
+							name: 'Conveyancing Lawyers',
 						},
 						{
-							name: 'So many other stuff',
-							url: '/#/lawyer-family',
+							name: 'Criminal Lawyers',
 						},
 						{
-							name: 'So many other stuff',
-							url: '/#/lawyer-family',
-						}, 
-						{
-							name: 'So many other stuff',
-							url: '/#/lawyer-family',
+							name: 'Family Lawyers',
 						},
 						{
-							name: 'So many other stuff',
-							url: '/#/lawyer-family',
+							name: 'Immigration Lawyers',
 						},
 						{
-							name: 'So many other stuff',
-							url: '/#/lawyer-family',
+							name: 'Personal Injury Lawyers',
 						},
 						{
-							name: 'So many other stuff',
-							url: '/#/lawyer-family',
+							name: 'Will and Estates Lawyers',
 						},
-
+						{
+							name: 'General Practitioners',
+						},
+						{
+							name: 'Specialist-Psychiatrists',
+						},
+						{
+							name: 'Specialist-Neurologists',
+						},
+						{
+							name: 'Specialist-Others',
+						},
+						{
+							name: 'Active Rehabilitators',
+						},
+						{
+							name: 'Aqua Therapists',
+						},
+						{
+							name: 'Chiropractors',
+						},
+						{
+							name: 'Massage Therapists',
+						},
+						{
+							name: 'Occupational Therapists',
+						},
+						{
+							name: 'Personal Trainers',
+						},
+						{
+							name: 'Physiotherapists',
+						},
+						{
+							name: 'Yoga Therapists',
+						},
+						{
+							name: 'Autobody/ Collision Specialists',
+						},
+						{
+							name: 'Car Dealers',
+						},
+						{
+							name: 'Insurance Professionals',
+						},
+						{
+							name: 'Court Reporting Services',
+						},
+						{
+							name: 'Intepreter/ Translators',
+						},
+						{
+							name: 'Notary Publics',
+						},
+						{
+							name: 'Mediators',
+						},
+						{
+							name: 'Accountants',
+						},
+						{
+							name: 'Appraisers',
+						},
+						{
+							name: 'Economists',
+						},
+						{
+							name: 'Insurance Brokers',
+						},
+						{
+							name: 'Real Estate Agents',
+						},
 					]
 				},
 				{
@@ -63,11 +123,24 @@ module.exports = React.createClass({
 					breakdowns: [
 						{
 							name: 'Civil Lawyers',
-							url: 'lawyer/civil',
+						},
+						{
+							name: 'Conveyancing Lawyers',
+						},
+						{
+							name: 'Criminal Lawyers',
 						},
 						{
 							name: 'Family Lawyers',
-							url: 'lawyer/family',
+						},
+						{
+							name: 'Immigration Lawyers',
+						},
+						{
+							name: 'Personal Injury Lawyers',
+						},
+						{
+							name: 'Will and Estates Lawyers',
 						},
 					]
 				},
@@ -80,11 +153,15 @@ module.exports = React.createClass({
 					breakdowns: [
 						{
 							name: 'General Practitioners',
-							url: 'doctor/general',
 						},
 						{
-							name: 'Specialist - Psychiatrists',
-							url: 'doctor/psyc',
+							name: 'Specialist-Psychiatrists',
+						},
+						{
+							name: 'Specialist-Neurologists',
+						},
+						{
+							name: 'Specialist-Others',
 						},
 					]
 				},
@@ -96,8 +173,28 @@ module.exports = React.createClass({
 					iconGray: "./files/images/heart-gray.png",
 					breakdowns: [
 						{
-							name: 'Active Rehabilitatators',
-							url: 'healthcare/rehab',
+							name: 'Active Rehabilitators',
+						},
+						{
+							name: 'Aqua Therapists',
+						},
+						{
+							name: 'Chiropractors',
+						},
+						{
+							name: 'Massage Therapists',
+						},
+						{
+							name: 'Occupational Therapists',
+						},
+						{
+							name: 'Personal Trainers',
+						},
+						{
+							name: 'Physiotherapists',
+						},
+						{
+							name: 'Yoga Therapists',
 						},
 
 					]
@@ -110,10 +207,14 @@ module.exports = React.createClass({
 					iconGray: "./files/images/wheel-gray.png",
 					breakdowns: [
 						{
-							name: 'Car Dealers',
-							url: 'automotive/dealers',
+							name: 'Autobody/ Collision Specialists',
 						},
-
+						{
+							name: 'Car Dealers',
+						},
+						{
+							name: 'Insurance Professionals',
+						},
 					]
 				},
 				{
@@ -124,8 +225,16 @@ module.exports = React.createClass({
 					iconGray: "./files/images/paper-gray.png",
 					breakdowns: [
 						{
+							name: 'Court Reporting Services',
+						},
+						{
+							name: 'Intepreter/ Translators',
+						},
+						{
 							name: 'Notary Publics',
-							url: 'legal/notary',
+						},
+						{
+							name: 'Mediators',
 						},
 
 					]
@@ -139,7 +248,18 @@ module.exports = React.createClass({
 					breakdowns: [
 						{
 							name: 'Accountants',
-							url: 'services/accountants',
+						},
+						{
+							name: 'Appraisers',
+						},
+						{
+							name: 'Economists',
+						},
+						{
+							name: 'Insurance Brokers',
+						},
+						{
+							name: 'Real Estate Agents',
 						},
 					]
 				}
@@ -164,33 +284,10 @@ module.exports = React.createClass({
 
 	getInitialState: function() {
 
-		// if (this.props.dropdownshown) {
-		// 	dropdownshown = true;
-		// 	marginTop = 25;
-		// 	arrowDown = true;
-		// 	height = 310;
-
-		// } else {
-		// 	dropdownshown = false;
-		// 	marginTop = -260;
-		// 	arrowDown = false;
-		// 	height = 60;
-		// }
-
 		dropdownshown = false;
 		marginTop = -260;
 		arrowDown = false;
 		height = 60;
-
-
-
-		// dropdownshown = false;
-		// marginTop = -260;
-		// arrowDown = false;
-		// height = 60;		
-
-
-
 
 		return ({
 			selected: 'All Professions',
@@ -199,8 +296,11 @@ module.exports = React.createClass({
 			marginTop: marginTop,
 			arrowDown: arrowDown,
 			height: height,
+			count: 0
 		})
 	},
+
+
 	
 	animate: function() {
 
@@ -228,6 +328,18 @@ module.exports = React.createClass({
 		document.getElementById('search-find').value = '';
 	},
 
+	stopPropagation: function(e) {
+		e.stopPropagation()
+	},
+
+	componentDidUpdate: function() {
+		if (this.props.toggleCloseDrop != this.state.count) {
+			this.setState({dropdownshown: false, marginTop: -260, arrowDown: false, height: 60});
+			$('#arrow-gray').css('transform','rotate(0deg');
+			this.setState({count: this.props.toggleCloseDrop})
+		}
+	},
+
 	render: function() {
 
 
@@ -238,7 +350,7 @@ module.exports = React.createClass({
 
 		return (
 
-		<div className='dropdown-container' style={height}> 
+		<div className='dropdown-container' style={height} onClick={this.stopPropagation}> 
 			<div id='dropdown-input-container'>
 				
  				<CatImage 
