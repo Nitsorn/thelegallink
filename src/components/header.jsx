@@ -1,14 +1,15 @@
 var React = require('react');
+var Link = require('react-router').Link
 
 module.exports = React.createClass({
 	render: function() {
 		return (	
 			<div id="nav">	
-				<a href='/#/'>
+				<Link to = '/landing'>
 					<div id="nav-logo-frame">
 						<div id="nav-logo"/>
 					</div>
-				</a>
+				</Link>
 			</div>
 		)
 	}

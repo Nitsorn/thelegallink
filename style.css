@@ -15,21 +15,27 @@ body {
   top: 0;
   left: 0;
   width: 100vw;
-  height: 60px;
-  padding-top: 20px; }
+  height: 60px; }
   #nav #nav-logo-frame {
-    width: 50px;
-    height: 50px;
+    width: 70px;
+    height: 60px;
     float: left;
-    margin: 0 20px;
-    cursor: pointer; }
+    cursor: pointer;
+    background-color: #1F2938; }
     #nav #nav-logo-frame #nav-logo {
-      width: 35px;
-      height: 35px;
+      width: 70px;
+      height: 60px;
       cursor: pointer;
+      background-position: center;
       background-image: url("../files/images/logo.png");
-      background-size: 100%;
-      background-repeat: no-repeat; }
+      background-size: 35px auto;
+      background-repeat: no-repeat;
+      background-color: #313233;
+      transition: 0.3s ease; }
+      #nav #nav-logo-frame #nav-logo:hover {
+        margin-left: 20px;
+        background-color: #222323;
+        box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.7); }
 
 #footer {
   width: 100%;
@@ -107,6 +113,9 @@ body {
         height: 80px;
         width: 80px;
         margin-bottom: 20px; } }
+    @media screen and (max-width: 400px) {
+      #landing #logo {
+        padding-right: 40px; } }
   #landing h3 {
     color: #DADEE4;
     font-size: 17px;
@@ -118,7 +127,8 @@ body {
         width: 500px; } }
     @media screen and (max-width: 400px) {
       #landing h3 {
-        width: 300px; } }
+        width: 300px;
+        margin-right: 45px; } }
   #landing #search-container, #landing #sign-up-container {
     margin-top: 10px;
     margin-left: 20px;
@@ -142,15 +152,19 @@ body {
       transition: 0.5s ease;
       height: 60px;
       width: 330px;
-      overflow: hidden;
       margin-left: 10px;
+      overflow: hidden;
       position: relative;
       border-radius: 3px; }
+      @media screen and (max-width: 400px) {
+        #landing #search-container #search-find-container .dropdown-container, #landing #search-container #search-near-container .dropdown-container, #landing #sign-up-container #search-find-container .dropdown-container, #landing #sign-up-container #search-near-container .dropdown-container {
+          width: 270px;
+          margin-left: 10px; } }
       #landing #search-container #search-find-container .dropdown-container input, #landing #search-container #search-near-container .dropdown-container input, #landing #sign-up-container #search-find-container .dropdown-container input, #landing #sign-up-container #search-near-container .dropdown-container input {
         z-index: 10000;
         position: relative;
         margin-top: 0px;
-        width: 280px;
+        width: 270px;
         height: 40px;
         padding: 20px;
         border: 0px;
@@ -162,16 +176,31 @@ body {
         font-size: 15px;
         box-shadow: 0px 3px 4px 0px rgba(0, 0, 0, 0.5);
         letter-spacing: 1px; }
+        @media screen and (max-width: 400px) {
+          #landing #search-container #search-find-container .dropdown-container input, #landing #search-container #search-near-container .dropdown-container input, #landing #sign-up-container #search-find-container .dropdown-container input, #landing #sign-up-container #search-near-container .dropdown-container input {
+            width: 200px; } }
       #landing #search-container #search-find-container .dropdown-container ::-webkit-input-placeholder, #landing #search-container #search-near-container .dropdown-container ::-webkit-input-placeholder, #landing #sign-up-container #search-find-container .dropdown-container ::-webkit-input-placeholder, #landing #sign-up-container #search-near-container .dropdown-container ::-webkit-input-placeholder {
         color: #313233; }
+        @media screen and (max-width: 400px) {
+          #landing #search-container #search-find-container .dropdown-container ::-webkit-input-placeholder, #landing #search-container #search-near-container .dropdown-container ::-webkit-input-placeholder, #landing #sign-up-container #search-find-container .dropdown-container ::-webkit-input-placeholder, #landing #sign-up-container #search-near-container .dropdown-container ::-webkit-input-placeholder {
+            font-size: 12px; } }
       #landing #search-container #search-find-container .dropdown-container :-moz-placeholder, #landing #search-container #search-near-container .dropdown-container :-moz-placeholder, #landing #sign-up-container #search-find-container .dropdown-container :-moz-placeholder, #landing #sign-up-container #search-near-container .dropdown-container :-moz-placeholder {
         /* Firefox 18- */
         color: #313233; }
+        @media screen and (max-width: 400px) {
+          #landing #search-container #search-find-container .dropdown-container :-moz-placeholder, #landing #search-container #search-near-container .dropdown-container :-moz-placeholder, #landing #sign-up-container #search-find-container .dropdown-container :-moz-placeholder, #landing #sign-up-container #search-near-container .dropdown-container :-moz-placeholder {
+            font-size: 12px; } }
       #landing #search-container #search-find-container .dropdown-container ::-moz-placeholder, #landing #search-container #search-near-container .dropdown-container ::-moz-placeholder, #landing #sign-up-container #search-find-container .dropdown-container ::-moz-placeholder, #landing #sign-up-container #search-near-container .dropdown-container ::-moz-placeholder {
         /* Firefox 19+ */
         color: #313233; }
+        @media screen and (max-width: 400px) {
+          #landing #search-container #search-find-container .dropdown-container ::-moz-placeholder, #landing #search-container #search-near-container .dropdown-container ::-moz-placeholder, #landing #sign-up-container #search-find-container .dropdown-container ::-moz-placeholder, #landing #sign-up-container #search-near-container .dropdown-container ::-moz-placeholder {
+            font-size: 12px; } }
       #landing #search-container #search-find-container .dropdown-container :-ms-input-placeholder, #landing #search-container #search-near-container .dropdown-container :-ms-input-placeholder, #landing #sign-up-container #search-find-container .dropdown-container :-ms-input-placeholder, #landing #sign-up-container #search-near-container .dropdown-container :-ms-input-placeholder {
         color: #313233; }
+        @media screen and (max-width: 400px) {
+          #landing #search-container #search-find-container .dropdown-container :-ms-input-placeholder, #landing #search-container #search-near-container .dropdown-container :-ms-input-placeholder, #landing #sign-up-container #search-find-container .dropdown-container :-ms-input-placeholder, #landing #sign-up-container #search-near-container .dropdown-container :-ms-input-placeholder {
+            font-size: 12px; } }
       #landing #search-container #search-find-container .dropdown-container #search-dropdown, #landing #search-container #search-near-container .dropdown-container #search-dropdown, #landing #sign-up-container #search-find-container .dropdown-container #search-dropdown, #landing #sign-up-container #search-near-container .dropdown-container #search-dropdown {
         z-index: 10;
         transition: 0.45s ease;
@@ -181,6 +210,9 @@ body {
         height: 253px;
         background-color: #313233;
         box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5); }
+        @media screen and (max-width: 400px) {
+          #landing #search-container #search-find-container .dropdown-container #search-dropdown, #landing #search-container #search-near-container .dropdown-container #search-dropdown, #landing #sign-up-container #search-find-container .dropdown-container #search-dropdown, #landing #sign-up-container #search-near-container .dropdown-container #search-dropdown {
+            width: 190px; } }
         #landing #search-container #search-find-container .dropdown-container #search-dropdown #left-side, #landing #search-container #search-near-container .dropdown-container #search-dropdown #left-side, #landing #sign-up-container #search-find-container .dropdown-container #search-dropdown #left-side, #landing #sign-up-container #search-near-container .dropdown-container #search-dropdown #left-side {
           display: inline-block;
           padding-top: 15px;
@@ -228,29 +260,41 @@ body {
             color: #DADEE4; }
         #landing #search-container #search-find-container .dropdown-container #search-dropdown #right-side, #landing #search-container #search-near-container .dropdown-container #search-dropdown #right-side, #landing #sign-up-container #search-find-container .dropdown-container #search-dropdown #right-side, #landing #sign-up-container #search-near-container .dropdown-container #search-dropdown #right-side {
           position: absolute;
-          margin-left: -120px;
+          margin-left: -180px;
           z-index: -10;
           display: inline-block;
-          padding-top: 25px;
-          padding-left: 40px;
+          padding: 25px;
+          padding-left: 60px;
           vertical-align: top;
           background-color: #313233;
           float: left;
           text-align: left;
-          width: 270px;
+          width: 300px;
           height: 253px;
           overflow-y: scroll;
           overflow-x: hidden;
           border-radius: 0 0 3px 0; }
+          @media screen and (max-width: 400px) {
+            #landing #search-container #search-find-container .dropdown-container #search-dropdown #right-side, #landing #search-container #search-near-container .dropdown-container #search-dropdown #right-side, #landing #sign-up-container #search-find-container .dropdown-container #search-dropdown #right-side, #landing #sign-up-container #search-near-container .dropdown-container #search-dropdown #right-side {
+              margin-left: -90px;
+              width: 220px; } }
           #landing #search-container #search-find-container .dropdown-container #search-dropdown #right-side p, #landing #search-container #search-near-container .dropdown-container #search-dropdown #right-side p, #landing #sign-up-container #search-find-container .dropdown-container #search-dropdown #right-side p, #landing #sign-up-container #search-near-container .dropdown-container #search-dropdown #right-side p {
+            margin-left: 100px;
             cursor: pointer;
             transition: 0.3s ease;
-            width: 200px;
+            width: 300px;
             margin: auto;
+            height: 30px;
             margin-top: 8px;
-            font-size: 17px; }
+            font-size: 17px;
+            padding: 3px 4px; }
+            @media screen and (max-width: 400px) {
+              #landing #search-container #search-find-container .dropdown-container #search-dropdown #right-side p, #landing #search-container #search-near-container .dropdown-container #search-dropdown #right-side p, #landing #sign-up-container #search-find-container .dropdown-container #search-dropdown #right-side p, #landing #sign-up-container #search-near-container .dropdown-container #search-dropdown #right-side p {
+                font-size: 13px;
+                margin-top: 5px; } }
             #landing #search-container #search-find-container .dropdown-container #search-dropdown #right-side p:hover, #landing #search-container #search-near-container .dropdown-container #search-dropdown #right-side p:hover, #landing #sign-up-container #search-find-container .dropdown-container #search-dropdown #right-side p:hover, #landing #sign-up-container #search-near-container .dropdown-container #search-dropdown #right-side p:hover {
-              padding-left: 10px; }
+              background-color: white;
+              color: black; }
       #landing #search-container #search-find-container .dropdown-container #go-container, #landing #search-container #search-near-container .dropdown-container #go-container, #landing #sign-up-container #search-find-container .dropdown-container #go-container, #landing #sign-up-container #search-near-container .dropdown-container #go-container {
         width: 50px;
         height: 40.19px;
@@ -270,9 +314,16 @@ body {
       margin-right: 10px; }
       #landing #search-container #search-near-container #search-near, #landing #sign-up-container #search-near-container #search-near {
         border-radius: 3px 0 0 3px; }
+      @media screen and (max-width: 400px) {
+        #landing #search-container #search-near-container, #landing #sign-up-container #search-near-container {
+          margin-right: 40px; } }
     #landing #search-container #search-find-container, #landing #sign-up-container #search-find-container {
       width: 330px;
       margin-right: 20px; }
+      @media screen and (max-width: 400px) {
+        #landing #search-container #search-find-container, #landing #sign-up-container #search-find-container {
+          width: 260px;
+          margin-right: 40px; } }
       #landing #search-container #search-find-container #dropdown-input-container, #landing #sign-up-container #search-find-container #dropdown-input-container {
         background-color: white;
         width: 330px;
@@ -282,6 +333,9 @@ body {
         outline: none;
         background-color: #DADEE4;
         box-shadow: 0px 3px 4px 0px rgba(0, 0, 0, 0.5); }
+        @media screen and (max-width: 400px) {
+          #landing #search-container #search-find-container #dropdown-input-container, #landing #sign-up-container #search-find-container #dropdown-input-container {
+            width: 250px; } }
         #landing #search-container #search-find-container #dropdown-input-container #cat-image, #landing #sign-up-container #search-find-container #dropdown-input-container #cat-image {
           width: 50px;
           height: 40.19px;
@@ -312,6 +366,9 @@ body {
           border-radius: 0;
           box-shadow: none;
           box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.5); }
+          @media screen and (max-width: 400px) {
+            #landing #search-container #search-find-container #dropdown-input-container #search-find, #landing #sign-up-container #search-find-container #dropdown-input-container #search-find {
+              width: 160px; } }
         #landing #search-container #search-find-container #dropdown-input-container .dropdown-arrow, #landing #sign-up-container #search-find-container #dropdown-input-container .dropdown-arrow {
           display: inline-block;
           vertical-align: top;
@@ -338,17 +395,18 @@ body {
             background-repeat: no-repeat;
             transition: 0.3s ease; }
   #landing #top-ten {
-    font-size: 20px;
-    border-bottom: 2px solid #939598;
-    width: 315px;
+    font-size: 15px;
+    border-bottom: 1px solid #939598;
+    width: 230px;
     margin: auto;
     margin-top: 130px;
+    margin-bottom: 200px;
     transition: 0.3s ease;
     cursor: pointer; }
     @media screen and (max-width: 700px) {
       #landing #top-ten {
         margin-top: 240px;
-        font-size: 17px;
+        font-size: 12px;
         width: 230px; } }
     #landing #top-ten:hover {
       background-color: #939598;
@@ -418,14 +476,27 @@ body {
     background-size: auto 100%;
     background-repeat: no-repeat; }
     #sidebar-container #sidebar-content #sidebar-content-container {
-      overflow: scroll;
+      overflow-y: scroll;
+      overflow-x: hidden;
       width: 85%;
       height: 100vh;
       margin: auto;
       position: relative;
       letter-spacing: 2px; }
+      #sidebar-container #sidebar-content #sidebar-content-container #hide {
+        float: right;
+        width: 480px;
+        bottom: 10px;
+        position: absolute;
+        margin: 10px;
+        margin-right: 0px;
+        color: #939598;
+        cursor: pointer;
+        transition: 0.2s ease; }
+        #sidebar-container #sidebar-content #sidebar-content-container #hide:hover {
+          color: #DADEE4; }
       #sidebar-container #sidebar-content #sidebar-content-container h3 {
-        margin-top: 30px;
+        margin-top: 40px;
         font-size: 20px;
         margin-bottom: 20px; }
         #sidebar-container #sidebar-content #sidebar-content-container h3 #we {
@@ -567,10 +638,6 @@ body {
         margin-top: 100px;
         color: #DADEE4; }
 
-#g-map-all {
-  height: 500px;
-  width: 100%; }
-
 .g-map-single {
   height: 300px;
   width: 300px; }
@@ -583,3 +650,25 @@ body {
   background: gray;
   margin-top: 15px;
   padding: 15px; }
+
+#search-results-container {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  color: #313233; }
+  #search-results-container #navbar {
+    width: 300px;
+    height: 100vh;
+    position: fixed;
+    z-index: 5;
+    top: 0;
+    left: 0;
+    background-color: #313233;
+    box-shadow: 2px 0px 1px 0px rgba(0, 0, 0, 0.6); }
+  #search-results-container #map-all-container #g-map-all {
+    width: calc(100% - 300px);
+    float: right;
+    height: 100vh;
+    margin: auto; }

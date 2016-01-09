@@ -11,7 +11,8 @@ module.exports = React.createClass({
 		return ({
 			sideBarOpen: true,
 			marginRight: 0,
-			toggleCloseDrop: 0
+			toggleCloseDrop: 0,
+			job: '',
 		})
 	},
 
@@ -44,11 +45,19 @@ module.exports = React.createClass({
 	  node.scrollTop = node.scrollHeight;
 	},
 
+	toSearchResults: function(profession) {
+		var profession = document.getElementById('search-find').value;
+		if (typeof profession!== 'undefined') {
+			this.setState({job: profession})
+		}
+	},
+
 	render: function() {
 
 		var marginRight = {right: this.state.marginRight + 'px'}
 
 		return (	
+			
 			<div id="landing" onClick={this.toggleOpenSideBarClose}> 
 
 				<SideBar 
@@ -60,11 +69,11 @@ module.exports = React.createClass({
 				<div id="search-container">
 					<div id="search-find-container">
 						<h5> Find: </h5> 
-						<SearchBox stopPropagation={this.stopPropagation} dropdownshown={this.state.dropdowndownshown} toggleCloseDrop={this.state.toggleCloseDrop}/>
+						<SearchBox toSearchResults={this.toSearchResults} stopPropagation={this.stopPropagation} dropdownshown={this.state.dropdowndownshown} toggleCloseDrop={this.state.toggleCloseDrop}/>
 					</div>	
 					<div id="search-near-container">
 						<h5> Near: </h5> 
-						<SearchBoxNear toggleOpenSideBar={this.toggleOpenSideBar}/>
+						<SearchBoxNear job={this.state.job} toggleOpenSideBar={this.toggleOpenSideBar}/>
 					</div>
 				</div>
 				<div id='top-ten' onClick={this.toggleOpenSideBar}>

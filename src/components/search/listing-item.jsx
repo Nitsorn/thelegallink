@@ -26,6 +26,5 @@ module.exports = React.createClass({
 			<h4>Email: {this.props.item.email}</h4>
 			<div className="g-map-single" id={"g-map-single-"+this.props.item[".key"]}></div>
 		</div>
-
 	},
 });
