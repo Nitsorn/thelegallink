@@ -18,6 +18,4 @@ module.exports = (
 			<Route path="search-results" component={SearchResults} />
 		</Route>
 	</Router>
-
-
 )

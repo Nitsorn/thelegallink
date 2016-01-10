@@ -3,15 +3,33 @@ var Link = require('react-router').Link
 
 module.exports = React.createClass({
 	getInitialState: function(){
-		return {}
+		return ({
+			lat: 0,
+			lng: 0,
+			job: '',
+		})
 	},
+
 	render: function() {
+		var lat = this.state.lat;
+		var lng = this.state.lng;
+
+		if (lat > 48.6 && lat < 49.5 && lng > -123.4 && lng < -121.9) {
+			
+			var link = "/search-results?job=" + this.props.job + "&lat=" + this.state.lat + "&lng=" + this.state.lng;
+		
+		} else {
+
+			var link = '';
+			// some user feedback to use vancouver address
+		}
+
 		return (
 			<div className = "dropdown-container">
 				<input type="text" id="search-near" placeholder="Near: All Areas" />
 				<div id='go-container' onClick={this.props.toggleOpenSideBar}>
 					{/* link temporarily hard links to civil lawyer it will be dynamic later */}
-					<Link to={"/search-results?foo=bar&" + "lat=" + this.state.lat + "&lng=" + this.state.lng}>
+					<Link to={link}>
 						<img src='./files/images/search.svg'/>
 					</Link>	
 				</div>

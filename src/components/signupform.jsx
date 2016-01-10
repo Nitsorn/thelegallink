@@ -22,7 +22,11 @@ module.exports = React.createClass({
 
 	componentDidUpdate: function() {
 		if (this.props.count !== this.state.count) {
-			this.setState({formshow: true, height: 330, width: 100, backgroundColor: '#939598', color: '#1F2938'})
+			if (!this.state.formshow) {
+				this.setState({formshow: true, height: 330, width: 100, backgroundColor: '#939598', color: '#1F2938'})
+			} else {
+				this.setState({formshow: false, height: 40, width: 50, backgroundColor: '#1F2938',color: '#DADEE4'})
+			}
 			this.setState({count: this.props.count})
 		}
 	},

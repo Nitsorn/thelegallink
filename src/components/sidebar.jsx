@@ -25,7 +25,7 @@ module.exports = React.createClass({
 					<div id='arrow-side'/>
 				</div>
 				<div id='sidebar-content'>
-					<div id='sidebar-content-container'> 
+					<div id='sidebar-content-container'>
 						<h3>
 							<span id='we'>  WE ARE </span> <br />
 							<span id='name'> LAUNCHING IN </span> <br/> 
@@ -51,7 +51,7 @@ module.exports = React.createClass({
 								or send an email to us!
 							</div>
 						</a>
-						
+						<div id='hide' onClick={this.props.toggleOpenSideBar}> Hide </div> 
 					</div>
 				</div>
 			</div>

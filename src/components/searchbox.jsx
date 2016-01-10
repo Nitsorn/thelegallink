@@ -278,6 +278,7 @@ module.exports = React.createClass({
 
 	updateinput: function(whatwasclicked) {
 		document.getElementById('search-find').value = whatwasclicked;
+		this.props.toSearchResults(whatwasclicked);
 		this.animate();
 	},
 
