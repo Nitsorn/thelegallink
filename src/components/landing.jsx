@@ -64,7 +64,7 @@ module.exports = React.createClass({
 					marginRight={marginRight} 
 					toggleOpenSideBar={this.toggleOpenSideBar}/>
 				<div id="logo"/>	
-				<h3> Find Service Professionals Around Your Area And Vancouver</h3>
+				<h3> Find Service Professionals Around Vancouver and Your Area </h3>
 
 				<div id="search-container">
 					<div id="search-find-container">

@@ -659,7 +659,7 @@ body {
   height: 100vh;
   color: #313233; }
   #search-results-container #navbar {
-    width: 300px;
+    width: 350px;
     height: 100vh;
     position: fixed;
     z-index: 5;
@@ -668,7 +668,7 @@ body {
     background-color: #313233;
     box-shadow: 2px 0px 1px 0px rgba(0, 0, 0, 0.6); }
   #search-results-container #map-all-container #g-map-all {
-    width: calc(100% - 300px);
+    width: calc(100% - 350px);
     float: right;
     height: 100vh;
     margin: auto; }

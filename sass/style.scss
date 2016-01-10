@@ -960,7 +960,7 @@ body {
 	color: $dark-gray;
 
 	#navbar {
-		width: 300px;
+		width: 350px;
 		height: 100vh;
 		position: fixed;
 		z-index: 5;
@@ -971,7 +971,7 @@ body {
 	}
 	#map-all-container {
 		#g-map-all {
-		  width: calc(100% - 300px);
+		  width: calc(100% - 350px);
 		  float: right;
 		  height: 100vh;
 		  margin:auto;
