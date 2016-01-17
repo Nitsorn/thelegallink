@@ -4,7 +4,8 @@ var SignUpForm = require('./signupform');
 module.exports = React.createClass({
 	getInitialState: function() {
 		return({
-			count: 0
+			count: 0,
+			emailSent: false,
 		})
 	},
 
@@ -16,8 +17,13 @@ module.exports = React.createClass({
 		this.setState({count: this.state.count + 1})
 	},
 
+	hideSendEmail: function() {
+		this.setState({emailSent: true})
+	},
+
 	render: function() {
 
+		var email = !this.state.emailSent ? 'or send us an email!' : '';
 
 		return(
 			<div id="sidebar-container" style={this.props.marginRight} onClick={this.stopPropagation} > 
@@ -44,11 +50,11 @@ module.exports = React.createClass({
 							<p> No strings attached. </p>
 						</div>
 
-						<SignUpForm count={this.state.count}/>
+						<SignUpForm count={this.state.count} hideSendEmail={this.hideSendEmail}/>
 
 						<a href="mailto:signup@thelegallink.com">
 							<div id='orEmail'> 
-								or send an email to us!
+								{email}
 							</div>
 						</a>
 						<div id='hide' onClick={this.props.toggleOpenSideBar}> Hide </div> 

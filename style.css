@@ -601,7 +601,7 @@ body {
           height: 70px;
           display: block; }
         #sidebar-container #sidebar-content #sidebar-content-container #sign-up-container #scrollable-frame {
-          height: 270px;
+          height: 450px;
           overflow: scroll; }
           #sidebar-container #sidebar-content #sidebar-content-container #sign-up-container #scrollable-frame .title {
             margin-top: 10px;
@@ -635,26 +635,14 @@ body {
           #sidebar-container #sidebar-content #sidebar-content-container #sign-up-container #submit:hover {
             background-color: #314A6F; }
       #sidebar-container #sidebar-content #sidebar-content-container #orEmail {
-        margin-top: 100px;
+        margin-top: 110px;
         color: #DADEE4; }
-
-.g-map-single {
-  height: 300px;
-  width: 300px; }
-
-.listing-item-img {
-  max-height: 150px;
-  border-radius: 100%; }
-
-.listing-item {
-  background: gray;
-  margin-top: 15px;
-  padding: 15px; }
 
 #search-results-container {
   position: absolute;
   left: 0;
   top: 0;
+  overflow-y: scroll;
   width: 100vw;
   height: 100vh;
   color: #313233; }
@@ -667,6 +655,30 @@ body {
     left: 0;
     background-color: #313233;
     box-shadow: 2px 0px 1px 0px rgba(0, 0, 0, 0.6); }
+    #search-results-container #navbar #searchTitle {
+      color: white;
+      text-align: center;
+      z-index: 100;
+      text-align: right;
+      border-radius: 2px;
+      padding: 20px; }
+    #search-results-container #navbar #listingList-container {
+      position: absolute;
+      z-index: 1000;
+      height: 90vh;
+      width: 350px;
+      overflow-y: scroll; }
+      #search-results-container #navbar #listingList-container .listing-item {
+        width: 300px;
+        padding: 10px;
+        background-color: white;
+        color: #313233;
+        margin: 25px;
+        border-radius: 2px;
+        box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.5); }
+        #search-results-container #navbar #listingList-container .listing-item .g-map-single {
+          height: 200px;
+          width: 280px; }
   #search-results-container #map-all-container #g-map-all {
     width: calc(100% - 350px);
     float: right;

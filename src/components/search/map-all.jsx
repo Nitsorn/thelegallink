@@ -6,7 +6,7 @@ module.exports = React.createClass({
   },
   componentWillReceiveProps: function(){
   	this.initMap();
-    this.fixZoom();
+    // this.fixZoom();
   },
 
 
@@ -49,7 +49,8 @@ module.exports = React.createClass({
       <div id='map-all-container'>
         <div id="g-map-all">
         </div>
-      </div>)
+      </div>
+    )
 
 	}
 

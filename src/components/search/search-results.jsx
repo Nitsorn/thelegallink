@@ -16,9 +16,11 @@ module.exports = React.createClass({
 	render: function() {
 		return (	
 			<div id='search-results-container'>
-				<div id='navbar' />
+				<div id='navbar'>
+					<div id='searchTitle'>Finding: {this.props.location.query.job} </div>
+					<ListingsList job={this.props.location.query.job} listings={this.state.listings} />
+				</div>
 				<MapAll listings={this.state.listings} job={this.props.location.query.job} lat={this.props.location.query.lat} lng={this.props.location.query.lng}/>
-				<ListingsList listings={this.state.listings} />
 			</div>
 		)
 	}

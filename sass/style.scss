@@ -857,7 +857,7 @@ body {
 				}
 
 				#scrollable-frame {
-					height: 270px;
+					height: 450px;
 					overflow: scroll;
 
 					&>div {
@@ -907,7 +907,7 @@ body {
 				}
 			}
 			#orEmail {
-				margin-top: 100px;
+				margin-top: 110px;
 				color: $light-gray;
 			}
 			// #terms {
@@ -936,25 +936,16 @@ body {
 }
 
 
-.g-map-single {
-  height: 300px;
-  width: 300px;
-}
-.listing-item-img{
-  max-height: 150px;
-  border-radius: 100%;
-}
-.listing-item{
-  background: gray;
-  margin-top: 15px;
-  padding: 15px;
-}
+				
+
+
 
 
 #search-results-container {
 	position: absolute;
 	left:0;
 	top:0;
+	overflow-y: scroll;
 	width: 100vw;
 	height: 100vh;
 	color: $dark-gray;
@@ -967,14 +958,48 @@ body {
 		top: 0;
 		left: 0;
 		background-color: $dark-gray;
-	 	box-shadow: 2px 0px 1px 0px rgba(black, 0.6)
+	 	box-shadow: 2px 0px 1px 0px rgba(black, 0.6);
+
+	 	#searchTitle {
+ 			color: white;
+ 			text-align: center;
+ 			z-index: 100;
+ 			text-align: right;
+ 			border-radius: 2px;
+ 			padding: 20px;
+ 		}
+
+	 	#listingList-container {
+	 		position: absolute;
+	 		z-index: 1000;
+	 		height: 90vh;
+	 		width: 350px;
+	 		overflow-y: scroll;
+
+	 		.listing-item {
+	 			width: 300px;
+	 			padding: 10px;
+	 			background-color: white;
+	 			color: $dark-gray;
+	 			margin: 25px;
+	 			border-radius: 2px;
+	 			box-shadow: 0px 1px 3px 0px rgba(black, 0.5);
+
+	 			.g-map-single {
+				  height: 200px;
+				  width: 280px;
+				}
+
+	 		}
+
+	 	}
 	}
 	#map-all-container {
 		#g-map-all {
 		  width: calc(100% - 350px);
 		  float: right;
 		  height: 100vh;
-		  margin:auto;
+		  margin: auto;
 		}
 	}
 }
