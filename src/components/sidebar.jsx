@@ -52,11 +52,13 @@ module.exports = React.createClass({
 
 						<SignUpForm count={this.state.count} hideSendEmail={this.hideSendEmail}/>
 
-						<a href="mailto:signup@thelegallink.com">
+						<a href="mailto:sales.thelegallink@gmail.com">
 							<div id='orEmail'> 
 								{email}
 							</div>
 						</a>
+						<hr/>
+						<div> Select a profession and enter an address to see the demo! </div>
 						<div id='hide' onClick={this.props.toggleOpenSideBar}> Hide </div> 
 					</div>
 				</div>
