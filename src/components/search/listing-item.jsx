@@ -10,6 +10,16 @@ module.exports = React.createClass({
 	componentDidMount: function() {
   	this.initMap();
   },
+
+  componentWillReceiveProps: function(nextProps) {
+    if (nextProps.selectedJob == nextProps.item.name) {
+      this.setState({showDetail: true})
+    } else {
+      this.setState({showDetail: false})
+    }
+  },
+
+
   initMap: function(){
   	var latLng = {lat: this.props.item.lat_lng.lat, lng: this.props.item.lat_lng.lng};
   	var map = new google.maps.Map(document.getElementById('g-map-single-'+this.props.item[
@@ -28,7 +38,7 @@ module.exports = React.createClass({
   	var marker = new google.maps.Marker({
     	position: latLng,
     	map: map,
-    	title: 'Hello World!'
+    	title: 'Your Location'
   	});
   },
 
@@ -41,11 +51,10 @@ module.exports = React.createClass({
   },
 
 	render: function(){
-    var height = this.state.showDetail ? {height: '555px'} : {height: '160px'}
-
+    var height = this.state.showDetail ? {height: '555px'} : {height: '240px'}
 		return (
-      <div className="listing-item" style={height}>
-        <div onClick={this.showDetail} className='listing-name'>{this.props.item.name}</div>
+      <div className="listing-item" style={height} onClick={this.showDetail}>
+        <div className='listing-name'>{this.props.item.name}</div>
         <div className='listing-description'>some description great place great service omg just come here I will give you candy and also give you valuable legal advice on whether you should buy that house you saw that one time its so cute but that price though. Maybe you should call your grandmother. I dont know.</div>
         <hr/>
         <div className='listing-info'>

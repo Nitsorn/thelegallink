@@ -7,21 +7,30 @@ var ListingsList = require('./listings-list');
 module.exports = React.createClass({
 	mixins: [ReactFireMixin],
 	getInitialState: function(){
-		return {}
+		return ({
+			loadedAndClicked: false,
+			selectedJob: '',
+		})
 	},
 	componentWillMount: function() {
 		this.fb = new Firebase("https://legal-link.firebaseIO.com/listings");
 		this.bindAsArray(this.fb, "listings");
 	},
+
+	openMoreInfo: function(jobTitle) {
+		this.setState({selectedJob: jobTitle, loaded: true})
+	},
+
 	render: function() {
-		return (	
+		return (
 			<div id='search-results-container'>
 				<div id='navbar'>
 					<div id='searchTitle'>Finding: {this.props.location.query.job} </div>
-					<ListingsList job={this.props.location.query.job} listings={this.state.listings} />
+					<ListingsList job={this.props.location.query.job} listings={this.state.listings} selectedJob={this.state.selectedJob}/>
 				</div>
-				<MapAll listings={this.state.listings} job={this.props.location.query.job} lat={this.props.location.query.lat} lng={this.props.location.query.lng}/>
-			</div>
+				<MapAll loaded={this.state.loadedAndClicked} listings={this.state.listings} job={this.props.location.query.job} lat={this.props.location.query.lat} lng={this.props.location.query.lng} openMoreInfo={this.openMoreInfo}/>
+				{loading}
+		</div>
 		)
-	}
+	},
 })

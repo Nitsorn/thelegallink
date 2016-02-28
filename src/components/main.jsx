@@ -12,7 +12,6 @@ module.exports = React.createClass({
 				{this.props.children}
 				{/*<Footer />*/}
 			</div>
-
 		)
 	}
 })

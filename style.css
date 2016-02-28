@@ -9,6 +9,10 @@ body {
   font-family: 'lane';
   color: #DADEE4; }
 
+.pac-container {
+  z-index: 1000000000;
+  position: absolute; }
+
 #nav {
   z-index: 10;
   position: fixed;
@@ -116,17 +120,17 @@ body {
     @media screen and (max-width: 400px) {
       #landing #logo {
         padding-right: 40px; } }
-  #landing h3 {
+  #landing > h3 {
     color: #DADEE4;
     font-size: 17px;
     margin-top: 0px;
     letter-spacing: 1px;
     margin: auto; }
     @media screen and (max-width: 600px) {
-      #landing h3 {
+      #landing > h3 {
         width: 500px; } }
     @media screen and (max-width: 400px) {
-      #landing h3 {
+      #landing > h3 {
         width: 300px;
         margin-right: 45px; } }
   #landing #search-container, #landing #sign-up-container {
@@ -487,7 +491,7 @@ body {
         float: right;
         width: 480px;
         bottom: 10px;
-        position: absolute;
+        position: fixed;
         margin: 10px;
         margin-right: 0px;
         color: #939598;
@@ -635,8 +639,16 @@ body {
           #sidebar-container #sidebar-content #sidebar-content-container #sign-up-container #submit:hover {
             background-color: #314A6F; }
       #sidebar-container #sidebar-content #sidebar-content-container #orEmail {
-        margin-top: 110px;
-        color: #DADEE4; }
+        color: #DADEE4;
+        border-radius: 2px;
+        transition: 0.2s ease;
+        width: 175px;
+        margin: auto;
+        margin-top: 110px; }
+        #sidebar-container #sidebar-content #sidebar-content-container #orEmail:hover {
+          background-color: #939598; }
+          #sidebar-container #sidebar-content #sidebar-content-container #orEmail:hover a {
+            text-decoration: none; }
 
 #search-results-container {
   position: absolute;
@@ -706,6 +718,7 @@ body {
           margin-bottom: 10px;
           margin-left: 10px; }
   #search-results-container #map-all-container #g-map-all {
+    z-index: 11;
     width: calc(100% - 450px);
     float: right;
     height: 100vh;

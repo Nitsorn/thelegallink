@@ -27,7 +27,8 @@ module.exports = React.createClass({
 			}
 		}
 	},
-	submitForm: function() {
+	submitForm: function(e) {
+		e.preventDefault();
 		this.setState({formshow: false, height: 60, width: 80, backgroundColor: '#1F2938',color: '#DADEE4'})
 		$('#button').css('height','80px')
 		this.sendMail();
@@ -43,6 +44,8 @@ module.exports = React.createClass({
 			this.setState({count: this.props.count})
 		}
 	},
+
+
 
 	sendMail: function (){
 		console.log("send mail triggered!");
@@ -67,36 +70,44 @@ module.exports = React.createClass({
 					<div id='button' onClick={this.toggleFormOpen}>
 						<span> {buttonContent} </span>
 					</div>
-					<div id='scrollable-frame'>
+					<form id='scrollable-frame' onSubmit={this.submitForm}>
 						<div id='name'>
 							<div className='title'> Name of your business</div>
-							<input data-type="business_name" onChange={this.handleChange} type='text' placeholder='Eg: Malik Law Corp.'></input>
+							<input required data-type="business_name" onChange={this.handleChange} type='text' placeholder='Eg: Malik Law Corp.'></input>
 						</div>
 						<div id='type'>
 							<div className='title'> Type of your business </div>
-							<input data-type="business_type" onChange={this.handleChange} type='text' placeholder='Eg: Civil Lawyer'/> 
+							<input required data-type="business_type" onChange={this.handleChange} type='text' placeholder='Eg: Civil Lawyer'/> 
 						</div>
-						<div id='email'>
+						<div id='address'>
 							<div className='title'> Location of your business </div>
-							<input data-type="business_location" onChange={this.handleChange} type='text' placeholder='Eg: 129th Street Surrey, BC, V3W 4G2'></input>
+							<input required data-type="business_location" id='address-autofill' onChange={this.handleChange} type='text' placeholder='Eg: 129th Street Surrey, BC, V3W 4G2'></input>
 						</div>
 						<div id='email'>
 							<div className='title'>Contact Email </div>
-							<input data-type="contact_email" onChange={this.handleChange} type='text' placeholder='Eg: hello123@gmail.com'></input>
+							<input required data-type="contact_email" onChange={this.handleChange} type='text' placeholder='Eg: hello123@gmail.com'></input>
 						</div>
 						<div id='type'>
 							<div className='title'> Contact phone number </div>
-							<input data-type="contact_phone" onChange={this.handleChange} type='text' placeholder='Eg: 604-123-4567'/> 
+							<input required data-type="contact_phone" onChange={this.handleChange} type='text' placeholder='Eg: 604-123-4567'/> 
 						</div>
-						<div onClick={this.submitForm} id='submit'>
-							<span> Submit </span>
-						</div>
-					</div>
+						<input id='submit' type='submit' value='Submit'/>
+					</form>
 					
 						
 			</div>
 		)
-	}
+	},
+	componentDidMount: function () {
+		var autocomplete = new google.maps.places.Autocomplete(document.getElementById('address-autofill'));
+		autocomplete.addListener('place_changed', function(){this.getLatLng(autocomplete)}.bind(this));
+	},
+	getLatLng: function(autocomplete) {
+		var place = autocomplete.getPlace();
+		var lat = place.geometry.location.lat();
+		var lng = place.geometry.location.lng();
+		this.setState({lat: lat, lng: lng});
+	},
 })
 
 

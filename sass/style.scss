@@ -26,6 +26,11 @@ body {
 	color: $light-gray;
 }
 
+.pac-container {
+	z-index: 1000000000;
+	position: absolute;
+}
+
 #nav {
 	z-index: 10;
 	position: fixed;
@@ -76,7 +81,7 @@ body {
 		float: left;
 		width: 50%;
 		margin: 15px;
-		
+
 		#top-ten {
 			position: relative;
 			border-radius: 5px;
@@ -118,8 +123,8 @@ body {
 				}
 			}
 		}
-		
-			
+
+
 
 	}
 }
@@ -170,7 +175,7 @@ body {
 		}
 	}
 
-	h3 {
+	&>h3 {
 		color: $light-gray;
 		font-size: 17px;
 		margin-top: 0px;
@@ -278,7 +283,7 @@ body {
 					}
 				}
 
-				:-ms-input-placeholder {  
+				:-ms-input-placeholder {
 					color: $dark-gray;
 					@media screen and (max-width: 400px) {
 						font-size: 12px;
@@ -322,7 +327,7 @@ body {
 						}
 
 						.left-wrapper {
-							width: 180px;					
+							width: 180px;
 							float: left;
 							text-align: left;
 							transition: 0.3s ease;
@@ -348,7 +353,7 @@ body {
 								margin-left: 30px !important;
 							}
 
-							
+
 							p {
 								cursor: pointer;
 								vertical-align: middle;
@@ -415,7 +420,7 @@ body {
 							}
 						}
 
-							
+
 
 
 					}
@@ -438,7 +443,7 @@ body {
 						max-height: 20px;
 						margin: 10 15;
 					}
-				}	
+				}
 			}
 
 
@@ -452,7 +457,7 @@ body {
 			@media screen and (max-width: 400px){
 				margin-right: 40px;
 			}
-		}	
+		}
 
 		#search-find-container {
 			width: 330px;
@@ -688,7 +693,7 @@ body {
 				float: right;
 				width: 480px;
 				bottom: 10px;
-				position: absolute;
+				position: fixed;
 				margin: 10px;
 				margin-right: 0px;
 				color: $gray;
@@ -705,7 +710,7 @@ body {
 			margin-top:40px;
 			font-size: 20px;
 			margin-bottom: 20px;
-			
+
 				#we {
 					font-size: 39px;
 				}
@@ -720,7 +725,7 @@ body {
 				#number {
 					margin-left: 10px;
 					margin-right: 10px;
-					font-size: 70px; 
+					font-size: 70px;
 
 					background: -webkit-linear-gradient(bottom,#5e7fa4, #c7dbf1, #5e7fa4);
 					-webkit-background-clip: text;
@@ -824,7 +829,7 @@ body {
 					font-size: 12px;
 					float: right;
 					margin-right: 4px;
-				}	
+				}
 			}
 
 
@@ -853,7 +858,7 @@ body {
 				&>div {
 					height: 70px;
 					display: block;
-					
+
 				}
 
 				#scrollable-frame {
@@ -864,10 +869,10 @@ body {
 					}
 					.title {
 						margin-top: 10px;
-						margin-bottom: 5px;					
+						margin-bottom: 5px;
 					}
 				}
-				
+
 				#button {
 					width: 100%;
 					padding-top: 10px;
@@ -907,8 +912,18 @@ body {
 				}
 			}
 			#orEmail {
-				margin-top: 110px;
 				color: $light-gray;
+        border-radius: 2px;
+        transition:0.2s ease;
+        width: 175px;
+        margin: auto;
+        margin-top: 110px;
+        &:hover {
+          background-color: $gray;
+          a {
+            text-decoration: none;
+          }
+        }
 			}
 			// #terms {
 			// 	position: absolute;
@@ -925,18 +940,18 @@ body {
 			// 	&:hover {
 			// 		bottom: 13px;
 			// 	}
-			// }		
-				
+			// }
+
 		}
 
-			
+
 	}
 
 
 }
 
 
-				
+
 
 
 
@@ -1031,6 +1046,7 @@ body {
 	}
 	#map-all-container {
 		#g-map-all {
+      z-index: 11;
 		  width: calc(100% - 450px);
 		  float: right;
 		  height: 100vh;
@@ -1038,26 +1054,3 @@ body {
 		}
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

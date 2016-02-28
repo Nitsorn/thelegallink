@@ -1,12 +1,19 @@
 var React = require('react')
 
 module.exports = React.createClass({
-  componentDidMount: function() {
-  	// this.initMap();
-  },
-  componentWillReceiveProps: function(){
-  	this.initMap();
+
+  componentDidUpdate: function(){
     // this.fixZoom();
+    if (!this.props.loaded) {
+      this.initMap();
+    }
+  },
+
+
+  getInitialState: function() {
+    return({
+      selected: '',
+    })
   },
 
 
@@ -22,25 +29,44 @@ module.exports = React.createClass({
 
   	});
 
-    // var styles = [{"featureType":"all","elementType":"labels.text.fill","stylers":[{"color":"#ffffff"}]},{"featureType":"all","elementType":"labels.text.stroke","stylers":[{"visibility":"on"},{"color":"#3e606f"},{"weight":2},{"gamma":0.84}]},{"featureType":"all","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"administrative","elementType":"geometry","stylers":[{"weight":0.6},{"color":"#82c3e0"}]},{"featureType":"administrative","elementType":"geometry.fill","stylers":[{"color":"#bee3f3"},{"visibility":"on"}]},{"featureType":"administrative","elementType":"labels.text","stylers":[{"visibility":"simplified"}]},{"featureType":"landscape","elementType":"geometry","stylers":[{"color":"#2c5a71"}]},{"featureType":"poi","elementType":"geometry","stylers":[{"color":"#406d80"}]},{"featureType":"poi.park","elementType":"geometry","stylers":[{"color":"#2c5a71"}]},{"featureType":"road","elementType":"geometry","stylers":[{"color":"#29768a"},{"lightness":-37}]},{"featureType":"transit","elementType":"geometry","stylers":[{"color":"#406d80"}]},{"featureType":"water","elementType":"geometry","stylers":[{"color":"#8eb4c8"}]}]
     var styles = [{"featureType":"all","elementType":"geometry","stylers":[{"visibility":"simplified"}]},{"featureType":"administrative","elementType":"labels.text.fill","stylers":[{"color":"#444444"}]},{"featureType":"landscape","elementType":"all","stylers":[{"color":"#f2f2f2"}]},{"featureType":"poi","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"all","stylers":[{"saturation":-100},{"lightness":45}]},{"featureType":"road.highway","elementType":"all","stylers":[{"visibility":"simplified"}]},{"featureType":"road.arterial","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"transit","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"all","stylers":[{"color":"#226581"},{"visibility":"on"}]}]
     map.setOptions({styles: styles})
 
+    var icon = {
+        url: "../../../files/images/marker-you.svg", // url
+        scaledSize: new google.maps.Size(35 , 50), // scaled size
+        origin: new google.maps.Point(0,0), // origin
+        anchor: new google.maps.Point(0, 0) // anchor
+    };
 
   	var my_marker = new google.maps.Marker({
     	position: myLatLng,
     	map: map,
-    	icon: 'http://orig09.deviantart.net/b865/f/2009/282/b/d/free_pikachu_icon_by_daishokin.gif',
+    	icon: icon,
     	title: 'Hello World!'
   	});
 
   	var all_professionals = this.props.listings;
-  	for (i = 0; i < all_professionals.length; i++) { 
+
+    var self = this;
+
+  	for (i = 0; i < all_professionals.length; i++) {
     	var marker = new google.maps.Marker({
     		position: this.props.listings[i].lat_lng,
+        title: this.props.listings[i].name,
     		animation: google.maps.Animation.DROP,
     		map:map
     	});
+
+      marker.addListener('click', function(){
+        map.panTo(this.getPosition());
+        selected = this.title;
+
+        self.props.openMoreInfo(selected)
+        if (self.state.selected !== selected) {
+          self.setState({selected: selected})
+        }
+      })
 		}
   },
 

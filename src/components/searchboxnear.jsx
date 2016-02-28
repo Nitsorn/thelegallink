@@ -15,11 +15,10 @@ module.exports = React.createClass({
 		var lng = this.state.lng;
 
 		if (lat > 48.6 && lat < 49.5 && lng > -123.4 && lng < -121.9) {
-			
-			var link = "/search-results?job=" + this.props.job + "&lat=" + this.state.lat + "&lng=" + this.state.lng;
-		
-		} else {
 
+			var link = "/search-results?job=" + this.props.job + "&lat=" + this.state.lat + "&lng=" + this.state.lng;
+
+		} else {
 			var link = '';
 			// some user feedback to use vancouver address
 		}
@@ -31,7 +30,7 @@ module.exports = React.createClass({
 					{/* link temporarily hard links to civil lawyer it will be dynamic later */}
 					<Link to={link}>
 						<img src='./files/images/search.svg'/>
-					</Link>	
+					</Link>
 				</div>
 			</div>
 		)

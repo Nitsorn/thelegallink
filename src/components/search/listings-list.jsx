@@ -5,8 +5,8 @@ module.exports = React.createClass({
 	render: function() {
 		return	(
 			<div id='listingList-container'>
-	          {this.props.listings.map(function(listItem){
-	            return <ListingItem item={listItem}/>;
+	          {this.props.listings.map(function(listItem,index){
+	            return <ListingItem key={index} selectedJob={this.props.selectedJob} item={listItem}/>;
 	          },this)}
 	        </div>
 		)
