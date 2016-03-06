@@ -26,7 +26,7 @@ module.exports = React.createClass({
 		return (
 			<div className = "dropdown-container">
 				<input type="text" id="search-near" placeholder="Near: All Areas" />
-				<div id='go-container' onClick={this.props.toggleOpenSideBar}>
+				<div id='go-container'>
 					{/* link temporarily hard links to civil lawyer it will be dynamic later */}
 					<Link to={link}>
 						<img src='./files/images/search.svg'/>

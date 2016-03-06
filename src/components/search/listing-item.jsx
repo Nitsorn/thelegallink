@@ -21,25 +21,52 @@ module.exports = React.createClass({
 
 
   initMap: function(){
-  	var latLng = {lat: this.props.item.lat_lng.lat, lng: this.props.item.lat_lng.lng};
-  	var map = new google.maps.Map(document.getElementById('g-map-single-'+this.props.item[
+    // Initialize Map variables
+    var myLatLng = {lat: parseFloat(this.props.myLat), lng: parseFloat(this.props.myLng)};
+    var latLng = {lat: this.props.item.lat_lng.lat, lng: this.props.item.lat_lng.lng};
+    var bounds = new google.maps.LatLngBounds();
+
+    // Initialize Map
+    var map = new google.maps.Map(document.getElementById('g-map-single-'+this.props.item[
   		".key"]), {
     	center: latLng,
     	zoom: 12,
-      zoomControl: false,
       scaleControl: false,
       scrollwheel: false,
       disableDoubleClickZoom: true,
   	});
 
+    // Styling Map
     var styles = [{"featureType":"all","elementType":"geometry","stylers":[{"visibility":"simplified"}]},{"featureType":"administrative","elementType":"labels.text.fill","stylers":[{"color":"#444444"}]},{"featureType":"landscape","elementType":"all","stylers":[{"color":"#f2f2f2"}]},{"featureType":"poi","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"all","stylers":[{"saturation":-100},{"lightness":45}]},{"featureType":"road.highway","elementType":"all","stylers":[{"visibility":"simplified"}]},{"featureType":"road.arterial","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"transit","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"all","stylers":[{"color":"#226581"},{"visibility":"on"}]}]
     map.setOptions({styles: styles})
 
+    // Adding my location marker
+    var icon = {
+        url: "../../../files/images/marker-you.svg", // url
+        scaledSize: new google.maps.Size(35 , 50), // scaled size
+        origin: new google.maps.Point(0,0), // origin
+        anchor: new google.maps.Point(0, 0) // anchor
+    };
+    var my_marker = new google.maps.Marker({
+    	position: myLatLng,
+    	map: map,
+    	title: 'Your Location',
+      icon: icon,
+  	});
+
+    // Adding item marker
   	var marker = new google.maps.Marker({
     	position: latLng,
     	map: map,
-    	title: 'Your Location'
+    	title: 'Company`s Location'
   	});
+
+    // Extending the bounds to include each marker's position
+    bounds.extend(marker.position);
+    bounds.extend(my_marker.position);
+
+    map.fitBounds(bounds);
+
   },
 
   showDetail: function() {

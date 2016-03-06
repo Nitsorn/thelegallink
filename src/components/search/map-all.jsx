@@ -22,7 +22,6 @@ module.exports = React.createClass({
     var map = new google.maps.Map(document.getElementById('g-map-all'), {
     	center: myLatLng,
     	zoom: 12,
-      zoomControl: false,
       scaleControl: false,
       scrollwheel: false,
       disableDoubleClickZoom: true,

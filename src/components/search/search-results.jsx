@@ -18,7 +18,7 @@ module.exports = React.createClass({
 	},
 
 	openMoreInfo: function(jobTitle) {
-		this.setState({selectedJob: jobTitle, loaded: true})
+		this.setState({selectedJob: jobTitle, loadedAndClicked: true})
 	},
 
 	render: function() {
@@ -26,10 +26,9 @@ module.exports = React.createClass({
 			<div id='search-results-container'>
 				<div id='navbar'>
 					<div id='searchTitle'>Finding: {this.props.location.query.job} </div>
-					<ListingsList job={this.props.location.query.job} listings={this.state.listings} selectedJob={this.state.selectedJob}/>
+					<ListingsList job={this.props.location.query.job} listings={this.state.listings} selectedJob={this.state.selectedJob} myLat={this.props.location.query.lat} myLng={this.props.location.query.lng}/>
 				</div>
 				<MapAll loaded={this.state.loadedAndClicked} listings={this.state.listings} job={this.props.location.query.job} lat={this.props.location.query.lat} lng={this.props.location.query.lng} openMoreInfo={this.openMoreInfo}/>
-				{loading}
 		</div>
 		)
 	},
